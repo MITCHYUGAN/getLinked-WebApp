@@ -9,7 +9,7 @@ const HeroSection = () => {
         <section className="herosection">
             {/* <img src={gradient} className="gradient" /> */}
             <div className="text-line">
-                <h1>Igniting a Revolution in HR Innovation</h1>
+                <h1>Igniting a Revolution in Hr Innovation</h1>
                 <img src={line} alt="Curved Line" />
             </div>
             <div className="herosectionwrapper">
