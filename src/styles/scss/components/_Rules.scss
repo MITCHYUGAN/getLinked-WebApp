@@ -1,0 +1,110 @@
+.rules{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    min-height: 95vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+
+    .circle-gradient{
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .ruleswrapper{
+        width: min(1256px, 85%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 30px;
+
+        .rulescontents{
+            width: min(535px);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            h1{
+                width: min(180px);
+                font-family: $font-clashdisplay;
+                color: $white;
+                font-size: $font-30 + 2;
+                font-weight: $font-w-700;
+
+                span{
+                    color: $color-main;
+                }
+            }
+
+            p{
+                font-family: $font-montserrat;
+                color: $white;
+                font-size: $font-16 - 2;
+                font-weight: $font-w-400;
+                line-height: 27.5px;
+            }
+        }
+
+        .rulesimg{
+            width: min(600px, 60%);
+            // background-color: red;
+
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .rules{
+        padding: 50px 0;
+    
+        .ruleswrapper{
+            flex-direction: column-reverse;
+    
+            .rulescontents{
+                width: 80%;
+            }
+    
+            .rulesimg{
+                width: min(600px, 70%);
+
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .rules{
+    
+        .ruleswrapper{
+    
+            .rulescontents{
+                width: 95%;
+
+                h1{
+                    width: 100%;
+                    font-size: $font-16 + 4;
+                    text-align: center;
+                }
+
+                p{
+                    text-align: center;
+                    font-size: $font-16 - 4;
+                }
+            }
+    
+            .rulesimg{
+                width: min(90%);
+
+            }
+        }
+    }
+}

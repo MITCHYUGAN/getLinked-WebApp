@@ -1,0 +1,123 @@
+.rewards{
+    width: 100%;
+    background-color: #110B21;
+    display: grid;
+    place-items: center;
+    padding: 50px 0;
+
+    .rewardswrapper{
+        width: min(1256px, 85%);
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+
+        .rewardsheader{
+            align-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: min(500px, 90%);
+
+            h1{
+                width: 175px;
+                color: $white;
+                font-family: $font-clashdisplay;
+                font-size: $font-30 + 2;
+                font-weight: $font-w-700;
+
+                span{
+                    color: $color-main;
+                }
+            }
+
+            p{
+                color: $white;
+                font-size: $font-16;
+                font-weight: $font-w-400;
+                font-family: $font-montserrat;
+            }
+        }
+
+        .rewardsimages{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 35px;
+
+            .rewardstrophyimg{
+                width: min(550px, 40%);
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .rewardscontentsimg{
+                width: min(700px, 60%);
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .rewards{
+    
+        .rewardswrapper{
+    
+            .rewardsimages{
+                flex-direction: column;
+                align-items: center;
+    
+                .rewardstrophyimg{
+                    width: 80%;
+                }
+    
+                .rewardscontentsimg{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .rewards{
+    
+        .rewardswrapper{
+            gap: 65px;
+
+            .rewardsheader{
+                width: 100%;
+                align-items: center;
+
+                h1{
+                    // width: 100%;
+                    font-size: $font-16 + 4;
+                    text-align: center;
+                }
+
+                p{
+                    text-align: center;
+                }
+            }
+    
+            .rewardsimages{
+                flex-direction: column;
+                align-items: center;
+    
+                .rewardstrophyimg{
+                    width: 80%;
+                }
+    
+                .rewardscontentsimg{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+.criteria{
+    width: 100%;
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    display: grid;
+    place-items: center;
+
+    .criteriawrapper{
+        width: min(1256px, 90%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        .criteriaimg{
+            width: min(610px, 50%);
+
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .criteriacontents{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+            width: 535px;
+            // background-color: red;
+
+            h1{
+                width: 270px;
+                font-family: $font-clashdisplay;
+                color: $white;
+                font-size: $font-30 + 2;
+                font-weight: $font-w-700;
+
+                span{
+                    color: $color-main;
+                }
+            }
+
+            p{
+                color: $white;
+                font-size: $font-16 - 2;
+                font-weight: $font-w-400;
+                font-family: $font-montserrat;
+
+                span{
+                    font-size: $font-16;
+                    color: #FF26B9;
+                    font-weight: $font-w-700;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 850px) {
+    .criteria{
+        .criteriawrapper{
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 645px) {
+    .criteria{
+    
+        .criteriawrapper{
+    
+            .criteriaimg{
+                width: 90%;
+            }
+    
+            .criteriacontents{
+                width: 95%;
+            }
+        }
+    }
+}
+
+@media (max-width: 645px) {
+    .criteria{
+        padding: 50px 0;
+    
+        .criteriawrapper{
+    
+            .criteriacontents{
+                width: 95%;
+                align-items: center;
+                margin-top: 30px;
+    
+                h1{
+                    font-size: $font-16 + 4;
+                    text-align: center;
+                }
+    
+                p{
+                    text-align: center;
+                    font-size: $font-16 - 4;
+
+                    span{
+                        font-size: $font-16 - 3;
+                    }
+                }
+            }
+        }
+    }
+}

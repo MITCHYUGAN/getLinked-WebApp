@@ -1,0 +1,134 @@
+.introsection{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+    .introwrapper{
+        width: min(1256px, 90% );
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+
+        .introimg{
+            width: min(500px, 40%);
+
+            img{
+                width: 100%;
+            }
+
+            .introimgdesk{
+                display: block;
+            }
+
+            .introimgmobile{
+                display: none;
+            }
+        }
+
+        .introcontent{
+            width: min(530px, 50%);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+
+            .purplestar{
+                position: absolute;
+                right: 0;
+                top: 20px;
+                width: 30px;
+            }
+
+            h1{
+                width: min(400px, 100%);
+                font-size: $font-30 + 2;
+                font-weight: $font-w-700;
+                font-family: $font-clashdisplay;
+                color: $white;
+
+                span{
+                    color: $color-main;
+                }
+            }
+
+            p{
+                color: $white;
+                font-family: $font-montserrat;
+                font-size: $font-16 - 2;
+                font-weight: $font-w-400;
+                line-height: 27.5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 870px) {
+    .introsection{
+        padding: 50px 0;
+        .introwrapper{
+            gap: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .introsection{
+        .introwrapper{
+            flex-direction: column;
+            gap: 80px;
+    
+            .introimg{
+                width: min(70%);
+            }
+    
+            .introcontent{
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .introsection{
+        .introwrapper{
+            flex-direction: column;
+            gap: 80px;
+    
+            .introimg{
+                width: min(90%);
+
+                .introimgdesk{
+                    display: none;
+                }
+
+                .introimgmobile{
+                    display: block;
+                }
+            }
+    
+            .introcontent{
+                width: 95%;
+                align-items: center;
+
+                .purplestar{
+                    width: 10px;
+                }
+
+                h1{
+                    font-size: $font-16 + 4;
+                    text-align: center;
+                }
+
+                p{
+                    font-size: $font-16 - 4;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

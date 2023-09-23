@@ -1,0 +1,198 @@
+.privacy{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 100px 0;
+
+    .privacywrapper{
+        width: min(1256px, 85%);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+
+        .privacycontents{
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+            width: min(569px, 60%);
+
+            .privacyheader{
+                display: flex;
+                flex-direction: column;
+                gap: 17px;
+
+                h1{
+                    width: 300px;
+                    color: $white;
+                    font-size: $font-30 + 2;
+                    font-family: $font-clashdisplay;
+                    font-weight: $font-w-700;
+
+                    span{
+                        color: $color-main;
+                    }
+                }
+
+                p{
+                    color: rgba(255, 255, 255, 0.75);
+                    font-weight: $font-w-400;
+                    font-size: $font-16 - 2;
+                    font-family: $font-montserrat;
+                    width: 440px;
+                }
+
+                .privacyheaderparagraph{
+                    color: $white;
+                    margin-top: 14px;
+                }
+            }
+
+            .privacycontent{
+                width: min(570px, 100%);
+                min-height: 608px;
+                border: 1px solid $color-main;
+                border-radius: 5px;
+                background: rgba(217, 217, 217, 0.03);
+                display: grid;
+                place-items: center;
+                padding: 20px 0;
+
+                .privacycontentwrapper{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 24px;
+                    width: 80%;
+
+                    .privacycontentparagraph{
+                        width: min(425px, 95%);
+                        font-size: $font-16 - 2;
+                        line-height: 216.4%;
+                        font-family: $font-montserrat;
+                        font-weight: $font-w-400;
+                        color: $white;
+                    }
+    
+                    .privacycontenttexts{
+                        width: min(455px, 95%);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 20px;
+
+                        .privacycontenttext{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            align-self: flex-start;
+
+                            h3{
+                                font-size: $font-16;
+                                font-family: $font-montserrat;
+                                color: $color-main;
+                                font-weight: $font-w-700;
+                            }
+    
+                            h4{
+                                font-size: $font-16 - 2;
+                                font-family: $font-montserrat;
+                                color: $white;
+                                font-weight: $font-w-700;
+                            }
+                        }
+
+                        .checks{
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 14px;
+
+                            img{
+                                margin-top: 7px;
+                            }
+
+                            p{
+                                color: $white;
+                                font-size: $font-16 - 2;
+                                font-weight: $font-w-400;
+                                font-family: $font-montserrat;
+                                line-height: 216.4%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .privacyimg{
+            width: min(615px, 60%);
+
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 850px) {
+    .privacy{
+    
+        .privacywrapper{
+            flex-direction: column;
+            align-items: center;
+    
+            .privacycontents{
+                width: 100%;
+                align-items: center;
+    
+                .privacycontent{
+                    width: 90%;
+                    // min-height: ;
+    
+                    .privacycontentwrapper{
+
+                    }
+                }
+            }
+    
+            .privacyimg{
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .privacy{
+    
+        .privacywrapper{
+    
+            .privacycontents{
+    
+                .privacyheader{
+                    align-items: center;
+                    gap: 5px;
+
+                    h1{
+                        text-align: center;
+                        font-size: $font-16 + 4;
+                        width: 188px;
+                    }
+
+                    p{
+                        text-align: center;
+                        width: 90%;
+                        font-size: $font-16 - 4;
+                    }
+                }
+            }
+    
+            .privacyimg{
+                width: 90%;
+            }
+        }
+    }
+}

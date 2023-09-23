@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "text": "Can I work on a project I started before the hackathon?",
+        "img": "/src/components/FAQ/assets/+.png"
+    },
+
+    {
+        "id": 2,
+        "text": "What happens if I need help during the hackathon?",
+        "img": "/src/components/FAQ/assets/+.png"
+    },
+
+    {
+        "id": 3,
+        "text": "What happens if I don't have an idea for a project?",
+        "img": "/src/components/FAQ/assets/+.png"
+    },
+
+    {
+        "id": 4,
+        "text": "Can I join a team or do I have to come with one?",
+        "img": "/src/components/FAQ/assets/+.png"
+    },
+
+    {
+        "id": 5,
+        "text": "What happens after the hackathon ends?",
+        "img": "/src/components/FAQ/assets/+.png"
+    },
+
+    {
+        "id": 6,
+        "text": "Can I work on a project I started before the hackathon?",
+        "img": "/src/components/FAQ/assets/+.png"
+    }
+]

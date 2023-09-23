@@ -1,0 +1,206 @@
+.timeline{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 60px 0;
+    margin-bottom: 100px;
+
+    .timelinewrapper{
+        width: min(1256px, 85%);
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        align-items: center;
+
+        .timelineheader{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            h1{
+                color: $white;
+                font-family: $font-clashdisplay;
+                font-size: $font-30 + 2;
+                font-weight: $font-w-700;
+            }
+
+            p{
+                text-align: center;
+                width: min(345px, 100%);
+                color: $white;
+                font-family: $font-montserrat;
+                font-size: $font-16 - 2;
+                line-height: 172.4%;
+            }
+        }
+
+        .timelinecontents{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+
+            .timelinecontent{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+                div{
+                    width: min(520px, 45%);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    h2{
+                        font-size: $font-30 - 6;
+                        font-family: $font-montserrat;
+                        color: $color-main;
+                        font-weight: $font-w-700;
+                    }
+
+                    p{
+                        color: $white;
+                        font-size: $font-16 - 2;
+                        font-family: $font-montserrat;
+                        line-height: 170.9%;
+                        font-weight: $font-w-400;
+                    }
+                }
+
+                div:nth-of-type(1){
+                    
+                    h2, p{
+                        text-align: right;
+                    }
+                }
+
+            }
+
+            .timelinecontent1{
+                align-items: flex-end;
+
+                div{
+                    margin-bottom: 20px;
+                }
+            }
+
+            .timelinecontent2 {
+                align-items: flex-end;
+
+            }
+            
+            .timelinecontent3{
+                align-items: flex-end;
+
+                div:nth-of-type(1){
+                    align-items: flex-end;
+
+                    p{
+                        width: 388px;
+                        align-items: flex-end;
+                    }
+                }
+
+                div{
+                    .date{
+                        margin-bottom: 13px;
+                    }
+                }
+            }
+
+            .timelinecontent4, .timelinecontent5, .timelinecontent6{
+                align-items: flex-end;
+
+                div{
+                    .date{
+                        margin-bottom: 13px;
+                    }
+                }
+            }
+        }
+
+        .timelinecontentsmobile{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 799px) and (max-width: 900px) {
+    .timeline{
+        .timelinewrapper{
+            width: 95%;
+
+            .timelinecontents{
+
+                .timelinecontent{
+                    div{
+                        h2{
+                            font-size: $font-16 + 3;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .timeline{
+        .timelinewrapper{
+            width: 95%;
+
+            .timelinecontents{
+                display: none;
+            }
+
+            .timelinecontentsmobile{
+                display: flex;
+                flex-direction: column;
+                gap: 36px;
+                width: 90%;
+
+                .timelinecontentmobile{
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 17px;
+
+                    .timelinecontentmobileimg{
+
+                        img{
+                            width: 37px;
+                        }
+
+                    }
+
+                    .big-img{
+                        width: 33px;
+                    }
+
+                    .timelinecontentmobiletext{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        margin-bottom: 13px;
+
+                        h2{
+                            font-size: $font-16 + 4 ;
+                            font-family: $font-montserrat;
+                            color: $color-main;
+                            font-weight: $font-w-700;
+                        }
+
+                        p{
+                            color: $white;
+                            font-size: $font-16 - 2;
+                            font-family: $font-montserrat;
+                            line-height: 170.9%;
+                            font-weight: $font-w-400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

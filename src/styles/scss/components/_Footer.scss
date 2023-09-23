@@ -1,0 +1,138 @@
+.footer{
+    width: 100%;
+    min-height: min(393px, 60vh);
+    background-color: #100B20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .footerwrapper{
+        // width: min(1088px, 85%);
+        width: min(1250px, 82%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 50px;
+        flex-wrap: wrap;
+        row-gap: 60px;
+        // gap: 10px;
+
+        .footerdiv1{
+            width: 415px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+            gap: 30px;
+            // background-color: pink;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                
+                p{
+                    color: $white;
+                    font-family: $font-montserrat;
+                    line-height: 172.4%;
+                    font-weight: $font-w-400;
+                    font-size: $font-16 - 4;
+                }
+            }
+
+            p{
+                color: $white;
+                font-family: $font-montserrat;
+                line-height: 172.4%;
+                font-weight: $font-w-400;
+                font-size: $font-16 - 4;
+
+                span{
+                    color: $color-main;
+                    font-size: $font-16 + 4;
+                }
+            }
+
+        }
+
+        .footerdiv2{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 200px;
+            justify-content: space-between;
+            // background-color: pink;
+
+            h2{
+                color: $color-main;
+                font-size: $font-16 - 2;
+                line-height: 172.4%;
+                font-family: $font-montserrat;
+                font-weight: $font-w-600;
+            }
+
+            .footerlinks{
+                font-size: $font-16 - 4;
+                color: $white;
+                font-family: $font-montserrat;
+                line-height: 172.4%;
+                font-weight: $font-w-400;
+            }
+
+            .footersocials{
+                display: flex;
+                gap: 16px;
+                align-items: center;
+
+                h3{
+                    color: $color-main;
+                    font-size: $font-16 - 4;
+                    font-weight: $font-w-400;
+                    font-family: $font-montserrat;
+                }
+
+                img{
+                    width: 100px;
+                }
+            }
+        }
+
+        .footerdiv3{
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+            align-self: flex-start;
+            // background-color: pink;
+
+            h2{
+                color: $color-main;
+                font-size: $font-16 - 2;
+                line-height: 172.4%;
+                font-family: $font-montserrat;
+                font-weight: $font-w-600;
+            }
+
+            div{
+                display: flex;
+                gap: 16px;
+                align-items: center;
+
+                p{
+                    font-size: $font-16 - 4;
+                    font-family: $font-montserrat;
+                    color: $white;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .copyright{
+        color: $white;
+        margin-bottom: 40px;
+        font-size: $font-16 - 4;
+        font-family: $font-montserrat;
+    }
+}

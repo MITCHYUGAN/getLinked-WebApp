@@ -1,0 +1,106 @@
+.contacts{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .contactswrapper{
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .contactinfo{
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+            align-items: flex-start;
+            margin-top: 50px;
+
+            h1{
+                font-weight: $font-w-600;
+                font-family: $font-clashdisplay;
+                font-size: 32px;
+                color: $color-main;
+            }
+
+            p{
+                color: $white;
+                font-weight: $font-w-400;
+                font-family: $font-montserrat;
+            }
+
+            p:nth-of-type(3){
+                margin-top: 4px;
+            }
+
+            h3{
+                color: $color-main;
+                font-size: $font-16;
+                font-family: $font-montserrat;
+                font-weight: $font-w-400;
+            }
+        }
+    
+        .contactform{
+            display: flex;
+            flex-direction: column;
+            height: 510px;
+            width: min(490px, 60%);
+            align-items: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
+            justify-content: center;
+    
+            form{
+                display: flex;
+                flex-direction: column;
+                width: min(437px, 75%);
+                align-items: center;
+                gap: 32px;
+
+                .formheader{
+                    align-self: flex-start;
+
+                    h3{
+                        color: $color-main;
+                        font-size: $font-16 + 4;
+                        font-family: $font-clashdisplay;
+                    }
+                }
+    
+                input{
+                    width: 94%;
+                    height: 40px;
+                    padding-left: 20px;
+                }
+    
+                textarea{
+                    width: 94%;
+                    height: 119px;
+                    padding: 10px;
+                }
+
+                input, textarea{
+                    outline: none;
+                    color: $white;
+                    font-size: $font-16 - 2;
+                    font-family: $font-montserrat;
+                    border-radius: 4px;
+                    border: 1px solid #FFF;
+                    background: rgba(255, 255, 255, 0.03);
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                }
+
+                input::placeholder, textarea::placeholder{
+                    color: $white;
+                    font-size: $font-16 - 2;
+                    font-family: $font-montserrat;
+                }
+            }
+        }
+    }
+}

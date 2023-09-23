@@ -1,0 +1,146 @@
+.herosection{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: $background-main;
+    min-height: 110vh;
+    font-family: $font-clashdisplay;
+
+    .gradient{
+        position: absolute;
+        z-index: 1;
+        left: 20px;
+    }
+
+    .text-line{
+        position: absolute;
+        top: 18%;
+        right: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h1{
+            color: $white;
+            font-family: $font-montserrat;
+            font-size: $font-30 ;
+            font-style: italic;
+            font-weight: $font-w-700;
+        }
+
+        img{
+            width: 220px;
+        }
+    }
+
+    .herosectionwrapper{
+        z-index: 2;
+        width: min(1415px, 93%);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 100vh;
+        gap: 20px;
+
+        .herosectioncontents{
+            align-self: center;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            // background-color: red;
+
+            .herosectioncontent{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+                position: relative;
+
+                .bulb{
+                    position: absolute;
+                    right: 100px;
+                    top: -40px;
+                    width: 40px;
+                }
+
+                h1{
+                    color: $white;
+                    font-size: $font-50 + 20;
+                    font-family: $font-clashdisplay;
+                    font-weight: $font-w-700;
+
+                    span{
+                        color: $color-main;
+                    }
+                }
+
+                p{
+                    color: $white;
+                    width: min(520px);
+                    font-size: $font-16 + 2;
+                    font-family: $font-montserrat;
+                    font-weight: $font-w-400;
+                    line-height: 166%;
+                }
+            }
+
+        }
+
+
+        .herosectionimg{
+            width: min(670px);
+
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        
+    }
+}
+
+
+@media (min-width: 1457px) {
+    .herosection{
+        justify-content: space-between;
+    
+        .herosectionwrapper{
+    
+            .herosectionimg{
+                width: min(670px, 50%);
+    
+                img{
+                    display: block;
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+@media (max-width: 1290px) {
+    .herosection{
+        justify-content: center;
+    
+        .herosectionwrapper{
+            justify-content: flex-start;
+    
+            .herosectionimg{
+               display: none;
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+
+
