@@ -7,13 +7,14 @@ import IntroSection from './components/IntroSection/IntroSection'
 import Rules from './components/Rules/Rules'
 import Criteria from './components/Criteria/Criteria'
 import Faq from './components/FAQ/FAQ'
-import TimeLine from './components/Timeline/TimeLine'
+// import TimeLine from './components/Timeline/TimeLine'
 import Rewards from './components/Rewards/Rewards'
 import Partners from './components/Partners/Partners'
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 import Foooter from './components/Footer/Footer'
 import Contact from './Pages/Contact/Contact'
 import Register from './Pages/Register/Register'
+import TimeLine from './components/Time/Time'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Criteria />
             <Faq />
             <TimeLine />
+            {/* <TimeLine /> */}
             <Rewards />
             <Partners />
             <PrivacyPolicy />
