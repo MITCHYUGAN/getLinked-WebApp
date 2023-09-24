@@ -62,8 +62,11 @@ body {
   color: white;
   cursor: pointer;
 }
-.header .headerWrapper nav ul .navme {
-  color: green;
+.header .headerWrapper nav ul .active {
+  background: linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .header .headerWrapper .nav {
   display: none;
@@ -153,6 +156,11 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .star {
+  position: absolute;
+  top: 20px;
+  left: 5%;
+}
 .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark {
   display: flex;
   align-items: flex-end;
@@ -163,11 +171,18 @@ body {
   font-family: "Clash Display", sans-serif;
   font-weight: 700;
   font-size: 70px;
+  position: relative;
+}
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 .bulb {
+  position: absolute;
+  width: 53px;
+  top: -50px;
+  right: 20px;
 }
 .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 span {
   color: #D434FE;
 }
-.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark img {
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark .spark_chain {
   position: absolute;
   right: -23%;
   width: 25%;
@@ -187,18 +202,65 @@ body {
 .herosection .herosectionwrapper .herosectioncontents .herosectioncontent button {
   margin-top: 31px;
 }
+.herosection .herosectionwrapper .herosectioncontents .timer {
+  position: relative;
+}
+.herosection .herosectionwrapper .herosectioncontents .timer .lightstar {
+  position: absolute;
+  right: 100px;
+  top: -50px;
+}
 .herosection .herosectionwrapper .herosectionimg {
   width: inherit;
 }
-.herosection .herosectionwrapper .herosectionimg img {
+.herosection .herosectionwrapper .herosectionimg div {
+  position: relative;
+}
+.herosection .herosectionwrapper .herosectionimg div .landingimg {
+  mix-blend-mode: luminosity;
   width: 100%;
+}
+.herosection .herosectionwrapper .herosectionimg div .disco {
+  width: 90%;
+  left: 20px;
+  position: absolute;
+}
+.herosection .herosectionwrapper .herosectionimg img {
   display: block;
-  background-blend-mode: hard-light;
+}
+.herosection .circlegradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450981 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.herosection .circlegradient1 {
+  top: 0;
+  left: 0;
+}
+.herosection .circlegradient2 {
+  right: 0;
+  width: 400px;
+  height: 400px;
+  top: 150px;
 }
 
+@media (max-width: 1000px) {
+  .herosection .circlegradient2 {
+    display: none;
+  }
+}
 @media (min-width: 1602px) {
   .herosection {
     justify-content: center;
+  }
+  .herosection .circlegradient2 {
+    right: 400px;
+  }
+  .herosection .circlegradient1 {
+    left: 200px;
   }
 }
 @media (max-width: 1330px) {
@@ -208,10 +270,13 @@ body {
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
     width: 525px;
   }
-  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark img {
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark .spark_chain {
     position: static;
     right: 0;
     width: 15%;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .timer {
+    width: min(400px, 70%);
   }
   .herosection .herosectionwrapper .herosectionimg {
     position: absolute;
@@ -242,6 +307,10 @@ body {
     font-size: 50px;
     width: 373px;
   }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 .bulb {
+    width: 40px;
+    top: -40px;
+  }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
     width: 100%;
   }
@@ -254,6 +323,10 @@ body {
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
     font-size: 40px;
     width: 299px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 .bulb {
+    width: 30px;
+    top: -30px;
   }
   .herosection .herosectionwrapper .herosectionimg {
     width: 100%;
@@ -290,15 +363,22 @@ body {
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div h1 span {
     color: #D434FE;
   }
-  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div img {
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div .spark_chain_mobile {
     position: static;
     right: 0;
     width: 15%;
   }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile h1 {
+    position: relative;
     font-size: 32px;
     font-family: "Clash Display", sans-serif;
     color: white;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile h1 .bulbmobile {
+    width: 18px;
+    position: absolute;
+    right: 20px;
+    top: -20px;
   }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
     text-align: center;
@@ -310,6 +390,9 @@ body {
   }
   .herosection .herosectionwrapper .herosectioncontents .timer {
     width: 220px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .timer .lightstar {
+    display: none;
   }
   .herosection .herosectionwrapper .herosectioncontents .timer img {
     width: 100%;

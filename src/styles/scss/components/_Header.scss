@@ -42,8 +42,11 @@
                     cursor: pointer;
                 }
 
-                .navme{
-                    color: green;
+                .active{
+                    background: linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
             }
         }
@@ -61,6 +64,7 @@
 .headerBackgroundActive{
     background-color: $background-main;
 }
+
 
 
 

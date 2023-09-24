@@ -4,6 +4,7 @@
     align-items: flex-end;
     justify-content: flex-end;
 
+
     .herosectionwrapper{
         display: flex;
         justify-content: flex-end;
@@ -11,7 +12,6 @@
         min-height: 110vh;
         margin-top: 120px;
         width: min(1256px, 93%);
-        // background-color: pink;
         position: relative;
 
         .text-line{
@@ -40,13 +40,18 @@
             flex-direction: column;
             gap: 77px;
             width: min(750px, 100%);
-            // background-color: pink;
             margin-bottom: 100px;
 
             .herosectioncontent{
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
+                
+                .star{
+                    position: absolute;
+                    top: 20px;
+                    left: 5%;
+                }
                 
                 .heresectionheadingtext_chain_spark{
                     display: flex;
@@ -58,14 +63,21 @@
                         font-family: $font-clashdisplay;
                         font-weight: $font-w-700;
                         font-size: $font-50 + 20;
-                        // font-size: clamp(20px, 5vw ,$font-50 + 20px);
+                        position: relative;
+
+                        .bulb{
+                            position: absolute;
+                            width: 53px;
+                            top: -50px;
+                            right: 20px;
+                        }
 
                         span{
                             color: $color-main;
                         }
                     }
 
-                    img{
+                    .spark_chain{
                         position: absolute;
                         right: -23%;
                         width: 25%;
@@ -90,32 +102,83 @@
                     margin-top: 31px;
                 }
             }
+            .timer{
+                position: relative;
+
+                .lightstar{
+                    position: absolute;
+                    right: 100px;
+                    top: -50px;
+                }
+            }
 
         }
 
         .herosectionimg{
             width: inherit;
-            // background-color: red;
+
+            div{
+                position: relative;
+
+                .landingimg{
+                    mix-blend-mode: luminosity;
+                    width: 100%;
+                }
+
+                .disco{
+                    width: 90%;
+                    left: 20px;
+                    // background-color: red;
+                    position: absolute;
+                }
+            }
             
             img{
-                width: 100%;
                 display: block;
-                background-blend-mode: hard-light;
+                // z-index: -1;
             }
+        }
+    }
+    .circlegradient{
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        background-image: radial-gradient(circle,#450981 -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+    }
+    .circlegradient1{
+        top: 0;
+        left: 0;
+    }
+    .circlegradient2{
+        right: 0;
+        width: 400px;
+        height: 400px;
+        top: 150px;
+
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .herosection{
+        .circlegradient2{
+            display: none;
         }
     }
 }
 
 
-
-
-
-
-
-
 @media (min-width: 1602px) {
     .herosection{
         justify-content: center;
+        .circlegradient2{
+            right: 400px;
+        }
+        .circlegradient1{
+            left: 200px;
+        }
     }
 }
 
@@ -125,7 +188,6 @@
             justify-content: flex-start;
 
             .herosectioncontents{
-                // background-color: red;
 
                 .herosectioncontent{
                     .heresectionheadingtext_chain_spark{
@@ -134,12 +196,15 @@
                             width: 525px;
                         }
 
-                        img{
+                        .spark_chain{
                             position: static;
                             right: 0;
                             width: 15%;
                         }
                     }
+                }
+                .timer{
+                    width: min(400px, 70%);
                 }
             }
 
@@ -179,6 +244,11 @@
                         h1{
                             font-size: 50px;
                             width: 373px;
+
+                            .bulb{
+                                width: 40px;
+                                top: -40px;
+                            }
                         }
                     }
 
@@ -207,6 +277,11 @@
                         h1{
                             font-size: $font-30 + 10;
                             width: 299px;
+
+                            .bulb{
+                                width: 30px;
+                                top: -30px;
+                            }
                         }
                     }
                 }
@@ -251,18 +326,27 @@
                                 span{   
                                     color: $color-main;
                                 }
+
                             }
 
-                            img{
+                            .spark_chain_mobile{
                                 position: static;
                                 right: 0;
                                 width: 15%;
                             }
                         }
                         h1{
+                            position: relative;
                             font-size: $font-30 + 2;
                             font-family: $font-clashdisplay;
                             color: $white;
+
+                            .bulbmobile{
+                                width: 18px;
+                                position: absolute;
+                                right: 20px;
+                                top: -20px;
+                            }
                         }
                     }
 
@@ -278,6 +362,11 @@
                 }
                 .timer{
                     width: 220px;
+
+                    .lightstar{
+                        display: none;
+                    }
+
                     img{
                         width: 100%;
                     }

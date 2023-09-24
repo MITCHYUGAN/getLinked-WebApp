@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from './assets/logo.png'
 import { Link } from "react-scroll"
+import { NavLink } from 'react-router-dom'
 import x from "./assets/x.png"
 import menu from "./assets/menu.png"
 
@@ -32,11 +33,11 @@ const Header = () => {
                             <Link className='navlinks' to="timeline" spy={true} smooth={true} offset={50} duration={500}>Timeline</Link>
                             <Link to='overview' className='navlinks' spy={true} smooth={true} offset={50} duration={500}>Overview</Link>
                             <Link to='faq' className='navlinks' spy={true} smooth={true} offset={50} duration={500}>FAQs</Link>
-                            <a href='/contact' className='navlinks'>Contact</a>
+                            <NavLink to='/contact' className='navlinks' activeClassName="activebtn">Contact</NavLink>
                         </ul>
-                        <a href='/register'>
-                            <button className='button'>Register</button>
-                        </a>
+                        <NavLink to='/register' className='button' >
+                            Register
+                        </NavLink>
                      </nav>
 
                      <nav className={`nav ${openNav}`}>
