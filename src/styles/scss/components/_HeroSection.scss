@@ -3,142 +3,484 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background-color: $background-main;
-    min-height: 110vh;
-    font-family: $font-clashdisplay;
-
-    .gradient{
-        position: absolute;
-        z-index: 1;
-        left: 20px;
-    }
-
-    .text-line{
-        position: absolute;
-        top: 18%;
-        right: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        h1{
-            color: $white;
-            font-family: $font-montserrat;
-            font-size: $font-30 ;
-            font-style: italic;
-            font-weight: $font-w-700;
-        }
-
-        img{
-            width: 220px;
-        }
-    }
 
     .herosectionwrapper{
-        z-index: 2;
-        width: min(1415px, 93%);
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        height: 100vh;
-        gap: 20px;
+        min-height: 110vh;
+        margin-top: 120px;
+        width: min(1256px, 93%);
+        // background-color: pink;
+        position: relative;
 
-        .herosectioncontents{
-            align-self: center;
-            width: 600px;
+        .text-line{
+            position: absolute;
+            top: 0px;
+            right: 70px;
             display: flex;
             flex-direction: column;
-            gap: 50px;
-            // background-color: red;
+            align-items: flex-end;
+
+            h1{
+                color: $white;
+                font-style: italic;
+                font-size: $font-30 + 2;
+                font-family: $font-montserrat;
+                font-weight: $font-w-700;
+            }
+
+            img{
+                width: min(245px, 35%);
+            }
+        }
+
+        .herosectioncontents{
+            display: flex;
+            flex-direction: column;
+            gap: 77px;
+            width: min(750px, 100%);
+            // background-color: pink;
+            margin-bottom: 100px;
 
             .herosectioncontent{
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-                position: relative;
+                gap: 10px;
+                
+                .heresectionheadingtext_chain_spark{
+                    display: flex;
+                    align-items: flex-end;
+                    position: relative;
 
-                .bulb{
-                    position: absolute;
-                    right: 100px;
-                    top: -40px;
-                    width: 40px;
-                }
+                    h1{
+                        color: $white;
+                        font-family: $font-clashdisplay;
+                        font-weight: $font-w-700;
+                        font-size: $font-50 + 20;
+                        // font-size: clamp(20px, 5vw ,$font-50 + 20px);
 
-                h1{
-                    color: $white;
-                    font-size: $font-50 + 20;
-                    font-family: $font-clashdisplay;
-                    font-weight: $font-w-700;
+                        span{
+                            color: $color-main;
+                        }
+                    }
 
-                    span{
-                        color: $color-main;
+                    img{
+                        position: absolute;
+                        right: -23%;
+                        width: 25%;
+                        margin-bottom: 10px;
                     }
                 }
 
+                .heresectionheadingtext_chain_sparkmobile{
+                    display: none;
+                }
+
                 p{
+                    width: 522px;
                     color: $white;
-                    width: min(520px);
-                    font-size: $font-16 + 2;
+                    font-size: $font-16 + 4;
                     font-family: $font-montserrat;
-                    font-weight: $font-w-400;
                     line-height: 166%;
+                    font-weight: $font-w-400;
+                }
+
+                button{
+                    margin-top: 31px;
                 }
             }
 
         }
 
-
         .herosectionimg{
-            width: min(670px);
-
+            width: inherit;
+            // background-color: red;
+            
             img{
+                width: 100%;
                 display: block;
+                background-blend-mode: hard-light;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1602px) {
+    .herosection{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1330px) {
+    .herosection{
+        .herosectionwrapper{
+            justify-content: flex-start;
+
+            .herosectioncontents{
+                // background-color: red;
+
+                .herosectioncontent{
+                    .heresectionheadingtext_chain_spark{
+
+                        h1{
+                            width: 525px;
+                        }
+
+                        img{
+                            position: static;
+                            right: 0;
+                            width: 15%;
+                        }
+                    }
+                }
+            }
+
+            .herosectionimg{
+                position: absolute;
+                right: 0;
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .herosection{
+        justify-content: center;
+
+        .herosectionwrapper{
+            flex-direction: column;
+            align-items: center;
+            width: 85%;
+
+            .text-line{
+                position: static;
+                padding-bottom: 50px;
+
+                h1{
+                    font-size: clamp(14px, 4vw, 32px);
+                }
+            }
+
+            .herosectioncontents{
+                margin-bottom: 0px;
+
+                .herosectioncontent{
+
+                    .heresectionheadingtext_chain_spark{
+                        h1{
+                            font-size: 50px;
+                            width: 373px;
+                        }
+                    }
+
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+            
+            .herosectionimg{
+                width: 80%;
+                position: static;
+            }
+        }
+    }
+}
+
+@media (max-width: 535px) {
+    .herosection{
+
+        .herosectionwrapper{
+
+            .herosectioncontents{
+                .herosectioncontent{
+                    .heresectionheadingtext_chain_spark{
+                        h1{
+                            font-size: $font-30 + 10;
+                            width: 299px;
+                        }
+                    }
+                }
+            }
+
+            .herosectionimg{
                 width: 100%;
             }
         }
-        
     }
 }
 
-
-@media (min-width: 1457px) {
+@media (max-width: 430px) {
     .herosection{
-        justify-content: space-between;
-    
+
         .herosectionwrapper{
-    
-            .herosectionimg{
-                width: min(670px, 50%);
-    
-                img{
-                    display: block;
-                    width: 100%;
+            justify-content: flex-end;
+            margin-top: 60px;
+
+            .herosectioncontents{
+                align-items: center;
+                gap: 15px;
+                .herosectioncontent{
+                    align-items: center;
+                    .heresectionheadingtext_chain_spark{
+                        display: none;
+                    }
+
+                    .heresectionheadingtext_chain_sparkmobile{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        div{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            h1{
+                                width: 239px;
+
+                                span{   
+                                    color: $color-main;
+                                }
+                            }
+
+                            img{
+                                position: static;
+                                right: 0;
+                                width: 15%;
+                            }
+                        }
+                        h1{
+                            font-size: $font-30 + 2;
+                            font-family: $font-clashdisplay;
+                            color: $white;
+                        }
+                    }
+
+                    p{
+                        text-align: center;
+                        font-size: $font-16 - 3;
+                        width: 265px;
+                    }
+
+                    button{
+                        margin-top: 14px;
+                    }
+                }
+                .timer{
+                    width: 220px;
+                    img{
+                        width: 100%;
+                    }
                 }
             }
-            
         }
     }
 }
 
 
 
-@media (max-width: 1290px) {
-    .herosection{
-        justify-content: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .herosection{
+//     width: 100%;
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: flex-end;
+//     background-color: $background-main;
+//     min-height: 110vh;
+//     font-family: $font-clashdisplay;
+
+//     .gradient{
+//         position: absolute;
+//         z-index: 1;
+//         left: 20px;
+//     }
+
+//     .text-line{
+//         position: absolute;
+//         top: 18%;
+//         right: 100px;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-end;
+
+//         h1{
+//             color: $white;
+//             font-family: $font-montserrat;
+//             font-size: $font-30 ;
+//             font-style: italic;
+//             font-weight: $font-w-700;
+//         }
+
+//         img{
+//             width: 220px;
+//         }
+//     }
+
+//     .herosectionwrapper{
+//         z-index: 2;
+//         width: min(1415px, 93%);
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: flex-end;
+//         height: 100vh;
+//         gap: 20px;
+
+//         .herosectioncontents{
+//             align-self: center;
+//             width: 600px;
+//             display: flex;
+//             flex-direction: column;
+//             gap: 50px;
+//             // background-color: red;
+
+//             .herosectioncontent{
+//                 display: flex;
+//                 flex-direction: column;
+//                 gap: 20px;
+//                 align-items: flex-start;
+//                 position: relative;
+
+//                 .bulb{
+//                     position: absolute;
+//                     right: 100px;
+//                     top: -40px;
+//                     width: 40px;
+//                 }
+
+//                 h1{
+//                     color: $white;
+//                     font-size: $font-50 + 20;
+//                     font-family: $font-clashdisplay;
+//                     font-weight: $font-w-700;
+
+//                     span{
+//                         color: $color-main;
+//                     }
+//                 }
+
+//                 p{
+//                     color: $white;
+//                     width: min(520px);
+//                     font-size: $font-16 + 2;
+//                     font-family: $font-montserrat;
+//                     font-weight: $font-w-400;
+//                     line-height: 166%;
+//                 }
+//             }
+
+//         }
+
+
+//         .herosectionimg{
+//             width: min(670px);
+
+//             img{
+//                 display: block;
+//                 width: 100%;
+//             }
+//         }
+        
+//     }
+// }
+
+
+// @media (min-width: 1457px) {
+//     .herosection{
+//         justify-content: space-between;
     
-        .herosectionwrapper{
-            justify-content: flex-start;
+//         .herosectionwrapper{
     
-            .herosectionimg{
-               display: none;
-            }
+//             .herosectionimg{
+//                 width: min(670px, 50%);
+    
+//                 img{
+//                     display: block;
+//                     width: 100%;
+//                 }
+//             }
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
+
+// @media (max-width: 1290px) {
+//     .herosection{
+//         justify-content: center;
+    
+//         .herosectionwrapper{
+//             justify-content: flex-start;
+    
+//             .herosectionimg{
+//                display: none;
+//             }
+            
+//         }
+//     }
+// }
 
 
 

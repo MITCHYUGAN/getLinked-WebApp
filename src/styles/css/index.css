@@ -113,108 +113,206 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  background-color: #140D27;
-  min-height: 110vh;
-  font-family: "Clash Display", sans-serif;
-}
-.herosection .gradient {
-  position: absolute;
-  z-index: 1;
-  left: 20px;
-}
-.herosection .text-line {
-  position: absolute;
-  top: 18%;
-  right: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.herosection .text-line h1 {
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: 700;
-}
-.herosection .text-line img {
-  width: 220px;
 }
 .herosection .herosectionwrapper {
-  z-index: 2;
-  width: min(1415px, 93%);
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 100vh;
-  gap: 20px;
+  min-height: 110vh;
+  margin-top: 120px;
+  width: min(1256px, 93%);
+  position: relative;
 }
-.herosection .herosectionwrapper .herosectioncontents {
-  align-self: center;
-  width: 600px;
+.herosection .herosectionwrapper .text-line {
+  position: absolute;
+  top: 0px;
+  right: 70px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  align-items: flex-end;
+}
+.herosection .herosectionwrapper .text-line h1 {
+  color: white;
+  font-style: italic;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.herosection .herosectionwrapper .text-line img {
+  width: min(245px, 35%);
+}
+.herosection .herosectionwrapper .herosectioncontents {
+  display: flex;
+  flex-direction: column;
+  gap: 77px;
+  width: min(750px, 100%);
+  margin-bottom: 100px;
 }
 .herosection .herosectionwrapper .herosectioncontents .herosectioncontent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
+  gap: 10px;
+}
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark {
+  display: flex;
+  align-items: flex-end;
   position: relative;
 }
-.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .bulb {
-  position: absolute;
-  right: 100px;
-  top: -40px;
-  width: 40px;
-}
-.herosection .herosectionwrapper .herosectioncontents .herosectioncontent h1 {
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
   color: white;
-  font-size: 70px;
   font-family: "Clash Display", sans-serif;
   font-weight: 700;
+  font-size: 70px;
 }
-.herosection .herosectionwrapper .herosectioncontents .herosectioncontent h1 span {
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 span {
   color: #D434FE;
 }
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark img {
+  position: absolute;
+  right: -23%;
+  width: 25%;
+  margin-bottom: 10px;
+}
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile {
+  display: none;
+}
 .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
+  width: 522px;
   color: white;
-  width: 520px;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
   line-height: 166%;
+  font-weight: 400;
+}
+.herosection .herosectionwrapper .herosectioncontents .herosectioncontent button {
+  margin-top: 31px;
 }
 .herosection .herosectionwrapper .herosectionimg {
-  width: 670px;
+  width: inherit;
 }
 .herosection .herosectionwrapper .herosectionimg img {
-  display: block;
   width: 100%;
+  display: block;
+  background-blend-mode: hard-light;
 }
 
-@media (min-width: 1457px) {
+@media (min-width: 1602px) {
   .herosection {
-    justify-content: space-between;
-  }
-  .herosection .herosectionwrapper .herosectionimg {
-    width: min(670px, 50%);
-  }
-  .herosection .herosectionwrapper .herosectionimg img {
-    display: block;
-    width: 100%;
+    justify-content: center;
   }
 }
-@media (max-width: 1290px) {
+@media (max-width: 1330px) {
+  .herosection .herosectionwrapper {
+    justify-content: flex-start;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
+    width: 525px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark img {
+    position: static;
+    right: 0;
+    width: 15%;
+  }
+  .herosection .herosectionwrapper .herosectionimg {
+    position: absolute;
+    right: 0;
+    width: 60%;
+  }
+}
+@media (max-width: 800px) {
   .herosection {
     justify-content: center;
   }
   .herosection .herosectionwrapper {
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+  }
+  .herosection .herosectionwrapper .text-line {
+    position: static;
+    padding-bottom: 50px;
+  }
+  .herosection .herosectionwrapper .text-line h1 {
+    font-size: clamp(14px, 4vw, 32px);
+  }
+  .herosection .herosectionwrapper .herosectioncontents {
+    margin-bottom: 0px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
+    font-size: 50px;
+    width: 373px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
+    width: 100%;
   }
   .herosection .herosectionwrapper .herosectionimg {
+    width: 80%;
+    position: static;
+  }
+}
+@media (max-width: 535px) {
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
+    font-size: 40px;
+    width: 299px;
+  }
+  .herosection .herosectionwrapper .herosectionimg {
+    width: 100%;
+  }
+}
+@media (max-width: 430px) {
+  .herosection .herosectionwrapper {
+    justify-content: flex-end;
+    margin-top: 60px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents {
+    align-items: center;
+    gap: 15px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent {
+    align-items: center;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark {
     display: none;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div h1 {
+    width: 239px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div h1 span {
+    color: #D434FE;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile div img {
+    position: static;
+    right: 0;
+    width: 15%;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_sparkmobile h1 {
+    font-size: 32px;
+    font-family: "Clash Display", sans-serif;
+    color: white;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
+    text-align: center;
+    font-size: 13px;
+    width: 265px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent button {
+    margin-top: 14px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .timer {
+    width: 220px;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .timer img {
+    width: 100%;
   }
 }
 .introsection {
@@ -848,6 +946,7 @@ body {
   place-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   padding: 100px 0;
+  overflow-x: hidden;
 }
 .partners .partnerswrapper {
   display: flex;
