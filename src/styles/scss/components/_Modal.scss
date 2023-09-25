@@ -8,23 +8,24 @@
     z-index: 99;
 
     .modalwrapper{
-        width: 599px;
-        height: 564px;
+        width: min(599px, 80%);
+        // min-height: 564px;
         border-radius: 5px;
         border: 1px solid #D434FE;
         background: rgba(255, 255, 255, 0.01);
         display: grid;
         place-items: center;
-        padding: 10px 20px;
+        padding: 20px 20px;
 
         div{
             display: flex;
             flex-direction: column;
             gap: 15px;
             align-items: center;
+            // background-color: red;
 
             .modalimg{
-                width: 427px;
+                width: min(427px, 70%);
             }
     
             h1{
@@ -41,11 +42,29 @@
                 color: $white;
                 font-family: $font-montserrat;
                 font-weight: $font-w-400;
-                width: 290px;
+                width: min(290px, 100%);
             }
     
             button{
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 465px) {
+    .modal{
+        .modalwrapper{
+            div{
+                gap: 26px;
+                h1{
+                    font-size: $font-16;
+                }
+
+                p{
+                    font-size: $font-16 - 4;
+                    width: 100%;
+                }
             }
         }
     }

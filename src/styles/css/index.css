@@ -223,6 +223,7 @@ body {
 .herosection .herosectionwrapper .herosectionimg div .disco {
   width: 90%;
   left: 20px;
+  z-index: 1;
   position: absolute;
 }
 .herosection .herosectionwrapper .herosectionimg img {
@@ -1360,14 +1361,13 @@ body {
   z-index: 99;
 }
 .modal .modalwrapper {
-  width: 599px;
-  height: 564px;
+  width: min(599px, 80%);
   border-radius: 5px;
   border: 1px solid #D434FE;
   background: rgba(255, 255, 255, 0.01);
   display: grid;
   place-items: center;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 .modal .modalwrapper div {
   display: flex;
@@ -1376,7 +1376,7 @@ body {
   align-items: center;
 }
 .modal .modalwrapper div .modalimg {
-  width: 427px;
+  width: min(427px, 70%);
 }
 .modal .modalwrapper div h1 {
   font-size: 32px;
@@ -1391,12 +1391,24 @@ body {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  width: 290px;
+  width: min(290px, 100%);
 }
 .modal .modalwrapper div button {
   width: 100%;
 }
 
+@media (max-width: 465px) {
+  .modal .modalwrapper div {
+    gap: 26px;
+  }
+  .modal .modalwrapper div h1 {
+    font-size: 16px;
+  }
+  .modal .modalwrapper div p {
+    font-size: 12px;
+    width: 100%;
+  }
+}
 .contacts {
   width: 100%;
   display: flex;
@@ -1543,6 +1555,9 @@ body {
     width: 100%;
     background-color: transparent;
     box-shadow: none;
+  }
+  .contacts .contactswrapper .contactform form {
+    width: 90%;
   }
   .contacts .contactswrapper .contactform form p {
     display: block;

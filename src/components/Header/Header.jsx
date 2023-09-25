@@ -42,9 +42,9 @@ const Header = () => {
 
                      <nav className={`nav ${openNav}`}>
                         <ul>
-                            <Link to="timeline" className='navlinks'>Timeline</Link>
-                            <Link to='overview' className='navlinks'>Overview</Link>
-                            <Link to='faq' className='navlinks'>FAQs</Link>
+                            <Link to="timeline" onClick={() => setOpenNav("nav")} className='navlinks' spy={true} smooth={true} offset={50} duration={500}>Timeline</Link>
+                            <Link to='overview' onClick={() => setOpenNav("nav")} className='navlinks' spy={true} smooth={true} offset={50} duration={500}>Overview</Link>
+                            <Link to='faq' onClick={() => setOpenNav("nav")} className='navlinks' spy={true} smooth={true} offset={50} duration={500}>FAQs</Link>
                             <a href='/contact' className='navlinks'>Contact</a>
                         </ul>
                         <a href='/register' className='button'>Register</a>

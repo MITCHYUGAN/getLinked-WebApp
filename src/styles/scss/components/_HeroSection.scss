@@ -128,14 +128,13 @@
                 .disco{
                     width: 90%;
                     left: 20px;
-                    // background-color: red;
+                    z-index: 1;
                     position: absolute;
                 }
             }
             
             img{
                 display: block;
-                // z-index: -1;
             }
         }
     }

@@ -30,7 +30,7 @@ const Register = () => {
         console.log(formSubmitted)
     };
 
-    // My UseUffect ----------
+    // UseEffect to watch screensize ----------
     useEffect(() => {
         // Function to handle window resize and update button text
         const handleResize = () => {
@@ -207,53 +207,3 @@ const Register = () => {
 }
 
 export default Register
-
-
-// //   // Step 1: Set up state variables to track form input values and form submission status
-//   const [firstName, setFirstName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [message, setMessage] = useState('');
-//   const [formSubmitted, setFormSubmitted] = useState(false);
-
-//   // Step 3: Create a function to handle form submissions
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Step 3a: Set the formSubmitted state to true when the form is submitted
-//     setFormSubmitted(true);
-//   };
-
-//   // Step 2: Use the useEffect hook to make a POST request when formSubmitted is true
-//   useEffect(() => {
-//     if (formSubmitted) {
-//       // Step 2a: Construct the request body
-//       const requestBody = {
-//         "email": email,
-//         "first_name": firstName,
-//         "message": message
-//       };
-
-//       // Step 2b: Make the POST request
-//       fetch('https://backend.getlinked.ai/hackathon/contact-form', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(requestBody)
-//       })
-//         .then((response) => {
-//           if (!response.ok) {
-//             throw new Error('Network response was not ok');
-//           }
-//           console.log('Submitted Successfully!');
-//           alert("Contact form submitted successfully!")
-
-//           // Step 3c: Clear the form inputs after a successful submission
-//           setFirstName('');
-//           setEmail('');
-//           setMessage('');
-//         })
-//         .catch((error) => {
-//           console.error('Error submitting contact form:', error);
-//         });
-//     }
-//   }, [formSubmitted]);
