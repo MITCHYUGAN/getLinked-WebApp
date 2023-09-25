@@ -1774,9 +1774,10 @@ body {
     display: none;
   }
   .register .registerwrapper form {
-    width: 80%;
+    width: 100%;
     background-color: transparent;
     box-shadow: none;
+    padding: 0;
   }
   .register .registerwrapper form .formh1 {
     display: none;
@@ -1792,6 +1793,9 @@ body {
   }
   .register .registerwrapper form .registerformcontents .teamandphone div input, .register .registerwrapper form .registerformcontents .teamandphone div select, .register .registerwrapper form .registerformcontents .emailandtopic div input, .register .registerwrapper form .registerformcontents .emailandtopic div select {
     font-size: 13px;
+  }
+  .register .registerwrapper form .registerformcontents .selects {
+    gap: 10px;
   }
   .register .registerwrapper form .footerlastdiv h6 {
     font-size: 10px;

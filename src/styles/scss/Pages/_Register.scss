@@ -240,9 +240,10 @@
             }
     
             form{
-                width: 80%;
+                width: 100%;
                 background-color: transparent;
                 box-shadow: none;
+                padding: 0;
 
                 .formh1{
                     display: none;
@@ -264,6 +265,10 @@
                                 font-size: $font-16 - 3;
                             }
                         }
+                    }
+
+                    .selects{
+                        gap: 10px;
                     }
                 }
 
