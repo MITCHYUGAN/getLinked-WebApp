@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '../../components/Header/Header';
 import socials from './assets/socials.png';
 
@@ -7,62 +7,54 @@ const Contact = () => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  // const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const rejex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i
+  const rejex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i;
 
   // Create a function to handle form submissions
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Set the formSubmitted state to true when the form is submitted
-    setFormSubmitted(true);
-  };
 
-  // Use the useEffect hook to make a POST request when formSubmitted is true
-  useEffect(() => {
-    if (formSubmitted) {
-      //Construct the request body
+    if (firstName === '' || email === '' || message === '') {
+      alert('Please Fill out all inputs correctly');
+    } else if (!rejex.test(email)) {
+      alert('Pls Input a Valid Email');
+    } else {
+      // Construct the request body
       const requestBody = {
-        "email": email,
-        "first_name": firstName,
-        "message": message
+        email: email,
+        first_name: firstName,
+        message: message,
       };
 
-      if(firstName === "" || email === "" || message === ""){
-          alert("Please Fill out all inputs correctly")
-          setFormSubmitted(false);
+      // Make the POST request
+      fetch('https://backend.getlinked.ai/hackathon/contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          console.log('Submitted Successfully!');
+          alert('Contact form submitted successfully!');
 
-      } else if(!rejex.test(email) && rejex !== null){
-          alert("Pls Input a Valid Email")
-          setFormSubmitted(false);
+          // Clear the form inputs after a successful submission
+          setFirstName('');
+          setEmail('');
+          setMessage('');
 
-      } else{
-        //Make the POST request
-        fetch('https://backend.getlinked.ai/hackathon/contact-form', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(requestBody)
+          // Reset the formSubmitted state to false
+          // setFormSubmitted(false);
         })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            console.log('Submitted Successfully!');
-            alert("Contact form submitted successfully!")
-
-            //Clear the form inputs after a successful submission
-            setFirstName('');
-            setEmail('');
-            setMessage('');
-          })
-          .catch((error) => {
-            console.error('Error submitting contact form:', error);
-          });
-      }
+        .catch((error) => {
+          console.error('Error submitting contact form:', error);
+        });
     }
-  }, [formSubmitted, handleSubmit]);
+  };
 
   return (
     <>
@@ -72,7 +64,9 @@ const Contact = () => {
           <div className="contactinfo">
             <h1>Get in touch</h1>
             <p>Contact Information</p>
-            <p>27, Alara Street <br /> Yaba 100012 <br /> Lagos State</p>
+            <p>
+              27, Alara Street <br /> Yaba 100012 <br /> Lagos State
+            </p>
             <p>Call Us : 07067981819</p>
             <p>we are open from Monday-Friday <br /> 08:00am - 05:00pm</p>
             <h3>Share on</h3>
@@ -110,7 +104,7 @@ const Contact = () => {
                 Submit
               </button>
             </form>
-            <div className='mobileformsocials'>
+            <div className="mobileformsocials">
               <p>Share on</p>
               <img src={socials} alt="" />
             </div>

@@ -17,7 +17,6 @@ const Register = () => {
     const [category, setCategory] = useState();
     const [groupSize, setGroupSize] = useState();
     const [checked, setChecked] = useState()
-    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const rejex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i
 
@@ -25,9 +24,53 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //Set the formSubmitted state to true when the form is submitted
-        setFormSubmitted(true);
-        console.log(formSubmitted)
+       
+        if(email === "" || phone === "" || teamName === "" || topic === "" || category === "" || groupSize === "" || checked !== true ){
+            alert('Please Fill out all inputs correctly')
+        } else if(!rejex.test(email) && rejex !== null){
+            alert("Pls Input a Valid Email")
+        }else{
+
+            //Construct the request body
+            const requestBody = {
+                "email": email,
+                "phone_number": phone,
+                "team_name": teamName,
+                "group_size": Number(groupSize),
+                "project_topic": topic,
+                "category": Number(category),
+                "privacy_policy_accepted": checked,
+            }
+
+            console.log(requestBody)
+            
+            //make the POST request
+            fetch('https://backend.getlinked.ai/hackathon/registration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            })
+            .then((response) => {
+                if(!response.ok){
+                    throw new Error('Network response was not ok')
+                }
+                console.log('Submitted Successfully!');
+                setModal(true)
+
+                //Clear the form inputs after a successful submission
+                setTeamName('');
+                setPhone('');
+                setEmail('');
+                setTopic('');
+                setCategory('')
+                setGroupSize('')
+            })
+            .catch((error) => {
+                console.error('Error submitting contact form:', error)
+            });
+        }
     };
 
     // UseEffect to watch screensize ----------
@@ -52,62 +95,6 @@ const Register = () => {
           window.removeEventListener("resize", handleResize);
         };
       }, []);
-
-    // UseEffect For my form
-    useEffect(() => {
-        if(formSubmitted){
-            //Construct the request body
-            const requestBody = {
-                "email": email,
-                "phone_number": phone,
-                "team_name": teamName,
-                "group_size": Number(groupSize),
-                "project_topic": topic,
-                "category": Number(category),
-                "privacy_policy_accepted": checked,
-            }
-
-            console.log(requestBody)
-
-            if(email === "" || phone === "" || teamName === "" || topic === "" || category === "" || groupSize === "" || checked !== true ){
-                alert('Please Fill out all inputs correctly')
-                setFormSubmitted(false);
-            } else if(!rejex.test(email) && rejex !== null){
-                alert("Pls Input a Valid Email")
-                setFormSubmitted(false);
-            }else{
-                
-                //make the POST request
-                fetch('https://backend.getlinked.ai/hackathon/registration', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(requestBody)
-                })
-                .then((response) => {
-                    if(!response.ok){
-                        throw new Error('Network response was not ok')
-                    }
-                    console.log('Submitted Successfully!');
-                    setModal(true)
-
-                    //Clear the form inputs after a successful submission
-                    setTeamName('');
-                    setPhone('');
-                    setEmail('');
-                    setTopic('');
-                    setCategory('')
-                    setGroupSize('')
-                    setChecked(false)
-                })
-                .catch((error) => {
-                    console.error('Error submitting contact form:', error)
-                });
-            }
-
-        }
-    }, [formSubmitted, handleSubmit]);
 
 
     return(
