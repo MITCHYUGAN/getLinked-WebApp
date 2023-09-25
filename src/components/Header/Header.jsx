@@ -42,12 +42,12 @@ const Header = () => {
 
                      <nav className={`nav ${openNav}`}>
                         <ul>
-                            <Link className='navlinks' to=''>Timeline</Link>
-                            <Link className='navlinks'>Overview</Link>
-                            <Link className='navlinks'>FAQs</Link>
-                            <Link className='navlinks'>Contact</Link>
+                            <Link to="timeline" className='navlinks'>Timeline</Link>
+                            <Link to='overview' className='navlinks'>Overview</Link>
+                            <Link to='faq' className='navlinks'>FAQs</Link>
+                            <a href='/contact' className='navlinks'>Contact</a>
                         </ul>
-                        <button className='button'>Register</button>
+                        <a href='/register' className='button'>Register</a>
                     </nav>
                     { 
                     openNav === "nav" ? 

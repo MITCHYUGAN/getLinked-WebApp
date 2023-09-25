@@ -19,13 +19,16 @@ const Register = () => {
     const [checked, setChecked] = useState()
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    console.log("Group type", typeof(groupSize))
+    const rejex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i
+
+    console.log("Group", groupSize)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //Set the formSubmitted state to true when the form is submitted
         setFormSubmitted(true);
-      };
+        console.log(formSubmitted)
+    };
 
     // My UseUffect ----------
     useEffect(() => {
@@ -62,46 +65,49 @@ const Register = () => {
                 "project_topic": topic,
                 "category": Number(category),
                 "privacy_policy_accepted": checked,
-
-                // "email": "sample@eexampleeeeegtretr.com",
-                // "team_name": "Space Explore",
-                // "phone_number": "0903322445533",
-                // "project_topic": "Web server propagation",
-                // "group_size": 10,
-                // "privacy_poclicy_accepted": true,
-                // "category": 1
             }
 
             console.log(requestBody)
 
-            //make the POST request
-            fetch('https://backend.getlinked.ai/hackathon/registration', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestBody)
-            })
+            if(email === "" || phone === "" || teamName === "" || topic === "" || category === "" || groupSize === "" || checked !== true ){
+                alert('Please Fill out all inputs correctly')
+                setFormSubmitted(false);
+            } else if(!rejex.test(email) && rejex !== null){
+                alert("Pls Input a Valid Email")
+                setFormSubmitted(false);
+            }else{
+                
+                //make the POST request
+                fetch('https://backend.getlinked.ai/hackathon/registration', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestBody)
+                })
                 .then((response) => {
-                if(!response.ok){
-                    throw new Error('Network response was not ok')
-                }
-                console.log('Submitted Successfully!');
-                setModal(true)
+                    if(!response.ok){
+                        throw new Error('Network response was not ok')
+                    }
+                    console.log('Submitted Successfully!');
+                    setModal(true)
 
-                //Clear the form inputs after a successful submission
-                setTeamName('');
-                setPhone('');
-                setEmail('');
-                setTopic('');
-                setCategory();
-                setGroupSize()
+                    //Clear the form inputs after a successful submission
+                    setTeamName('');
+                    setPhone('');
+                    setEmail('');
+                    setTopic('');
+                    setCategory('')
+                    setGroupSize('')
+                    setChecked(false)
                 })
                 .catch((error) => {
-                console.error('Error submitting contact form:', error)
+                    console.error('Error submitting contact form:', error)
                 });
+            }
+
         }
-    }, [formSubmitted]);
+    }, [formSubmitted, handleSubmit]);
 
 
     return(
@@ -151,7 +157,7 @@ const Register = () => {
                                 <div>
                                     <p>Category</p>
                                     <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                                        <option>Select your category</option>
+                                        <option value="">Select your category</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -160,7 +166,7 @@ const Register = () => {
                                 <div>
                                     <p>Group Size</p>
                                     <select type="number" value={groupSize} onChange={(e) => setGroupSize(e.target.value)}>
-                                        <option>Select</option>
+                                        <option value="">Select</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -191,7 +197,7 @@ const Register = () => {
                                 <input checked={checked} onChange={(e) => setChecked(e.target.checked)} type="checkbox" />
                                 <p>I agreed with the event terms and conditions  and privacy policy</p>
                             </div>
-                            <button type="submit" className="button">{buttonText}</button>
+                            <button type="submit" onClick={handleSubmit} className="button">{buttonText}</button>
                         </div>
                     </form>
                 </div>

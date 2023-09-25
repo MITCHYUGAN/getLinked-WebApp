@@ -1,15 +1,19 @@
 .contacts{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
 
     .contactswrapper{
-        width: 85%;
+        width: min(1256px, 85%);
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        margin-top: 200px;
+        gap: 30px;
 
         .contactinfo{
             display: flex;
@@ -46,8 +50,8 @@
         .contactform{
             display: flex;
             flex-direction: column;
-            height: 510px;
-            width: min(490px, 60%);
+            height: 611px;
+            width: min(617px, 60%);
             align-items: center;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.03);
@@ -70,6 +74,10 @@
                         font-size: $font-16 + 4;
                         font-family: $font-clashdisplay;
                     }
+                }
+
+                p{
+                    display: none;
                 }
     
                 input{
@@ -101,6 +109,107 @@
                     font-family: $font-montserrat;
                 }
             }
+
+            .mobileformsocials{
+                display: none;
+            }
+        }
+    }
+
+    .contactgradient{
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        background-image: radial-gradient(circle,#450981 -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+    }
+    .contactgradient1{
+        top: 0;
+        left: 0;
+    }
+    .contactgradient2{
+        right: -100px;
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        bottom: -200px;
+    }
+}
+
+
+@media (max-width: 830px) {
+    .contacts{
+        .contactswrapper{
+            flex-direction: column;
+            align-items: center;
+            margin-top: 130px;
+            gap: 50px;
+
+            .contactinfo{
+                width: 90%;
+            }
+            .contactform{
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .contacts{
+        padding-bottom: 36px;
+        .contactswrapper{
+            .contactinfo{
+                display: none;
+            }
+
+            .contactform{
+                width: 100%;
+                background-color: transparent;
+                box-shadow: none;
+
+                form{
+
+                    p{
+                        display: block;
+                        color: $white;
+                        font-family: $font-montserrat;
+                        font-size: $font-16 - 4;
+                        width: 240px;
+                        align-self: flex-start;
+                    }
+                }
+
+                .mobileformsocials{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    margin-top: 40px;
+                    align-items: center;
+
+                    p{
+                        font-family: $font-montserrat;
+                        color: $color-main;
+                        font-size: $font-16 - 4;
+                    }
+
+                    img{
+                        width: 89px;
+                    }
+                }
+            }
+        }
+
+        .contactgradient1{
+            // background: red;
+            width: 400px;
+            height: 400px;
+            top: 50px;
+            left: -50px;
+        }
+
+        .contactgradient2{
+            display: none;
         }
     }
 }

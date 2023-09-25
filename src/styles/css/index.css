@@ -303,6 +303,9 @@ body {
   .herosection .herosectionwrapper .herosectioncontents {
     margin-bottom: 0px;
   }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .star {
+    display: none;
+  }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark h1 {
     font-size: 50px;
     width: 373px;
@@ -313,6 +316,9 @@ body {
   }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent p {
     width: 100%;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .timer .lightstar {
+    display: none;
   }
   .herosection .herosectionwrapper .herosectionimg {
     width: 80%;
@@ -343,6 +349,9 @@ body {
   }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent {
     align-items: center;
+  }
+  .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .star {
+    display: none;
   }
   .herosection .herosectionwrapper .herosectioncontents .herosectioncontent .heresectionheadingtext_chain_spark {
     display: none;
@@ -1390,16 +1399,20 @@ body {
 
 .contacts {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
 }
 .contacts .contactswrapper {
-  width: 85%;
+  width: min(1256px, 85%);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 200px;
+  gap: 30px;
 }
 .contacts .contactswrapper .contactinfo {
   display: flex;
@@ -1431,8 +1444,8 @@ body {
 .contacts .contactswrapper .contactform {
   display: flex;
   flex-direction: column;
-  height: 510px;
-  width: min(490px, 60%);
+  height: 611px;
+  width: min(617px, 60%);
   align-items: center;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
@@ -1454,6 +1467,9 @@ body {
   color: #D434FE;
   font-size: 20px;
   font-family: "Clash Display", sans-serif;
+}
+.contacts .contactswrapper .contactform form p {
+  display: none;
 }
 .contacts .contactswrapper .contactform form input {
   width: 94%;
@@ -1480,7 +1496,87 @@ body {
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
+.contacts .contactswrapper .contactform .mobileformsocials {
+  display: none;
+}
+.contacts .contactgradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450981 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.contacts .contactgradient1 {
+  top: 0;
+  left: 0;
+}
+.contacts .contactgradient2 {
+  right: -100px;
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  bottom: -200px;
+}
 
+@media (max-width: 830px) {
+  .contacts .contactswrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    gap: 50px;
+  }
+  .contacts .contactswrapper .contactinfo {
+    width: 90%;
+  }
+  .contacts .contactswrapper .contactform {
+    width: 90%;
+  }
+}
+@media (max-width: 450px) {
+  .contacts {
+    padding-bottom: 36px;
+  }
+  .contacts .contactswrapper .contactinfo {
+    display: none;
+  }
+  .contacts .contactswrapper .contactform {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .contacts .contactswrapper .contactform form p {
+    display: block;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    width: 240px;
+    align-self: flex-start;
+  }
+  .contacts .contactswrapper .contactform .mobileformsocials {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 40px;
+    align-items: center;
+  }
+  .contacts .contactswrapper .contactform .mobileformsocials p {
+    font-family: "Montserrat", sans-serif;
+    color: #D434FE;
+    font-size: 12px;
+  }
+  .contacts .contactswrapper .contactform .mobileformsocials img {
+    width: 89px;
+  }
+  .contacts .contactgradient1 {
+    width: 400px;
+    height: 400px;
+    top: 50px;
+    left: -50px;
+  }
+  .contacts .contactgradient2 {
+    display: none;
+  }
+}
 .register {
   width: 100%;
   display: flex;

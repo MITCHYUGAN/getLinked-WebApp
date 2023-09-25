@@ -3,54 +3,66 @@ import Header from '../../components/Header/Header';
 import socials from './assets/socials.png';
 
 const Contact = () => {
-  // Step 1: Set up state variables to track form input values and form submission status
+  // Set up state variables to track form input values and form submission status
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // Step 3: Create a function to handle form submissions
+  const rejex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i
+
+  // Create a function to handle form submissions
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Step 3a: Set the formSubmitted state to true when the form is submitted
+    // Set the formSubmitted state to true when the form is submitted
     setFormSubmitted(true);
   };
 
-  // Step 2: Use the useEffect hook to make a POST request when formSubmitted is true
+  // Use the useEffect hook to make a POST request when formSubmitted is true
   useEffect(() => {
     if (formSubmitted) {
-      // Step 2a: Construct the request body
+      //Construct the request body
       const requestBody = {
         "email": email,
         "first_name": firstName,
         "message": message
       };
 
-      // Step 2b: Make the POST request
-      fetch('https://backend.getlinked.ai/hackathon/contact-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          console.log('Ssubmitted Successfully!');
-          alert("Contact form submitted successfully!")
+      if(firstName === "" || email === "" || message === ""){
+          alert("Please Fill out all inputs correctly")
+          setFormSubmitted(false);
 
-          // Step 3c: Clear the form inputs after a successful submission
-          setFirstName('');
-          setEmail('');
-          setMessage('');
+      } else if(!rejex.test(email) && rejex !== null){
+          alert("Pls Input a Valid Email")
+          setFormSubmitted(false);
+
+      } else{
+        //Make the POST request
+        fetch('https://backend.getlinked.ai/hackathon/contact-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
         })
-        .catch((error) => {
-          console.error('Error submitting contact form:', error);
-        });
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            console.log('Submitted Successfully!');
+            alert("Contact form submitted successfully!")
+
+            //Clear the form inputs after a successful submission
+            setFirstName('');
+            setEmail('');
+            setMessage('');
+          })
+          .catch((error) => {
+            console.error('Error submitting contact form:', error);
+          });
+      }
     }
-  }, [formSubmitted]);
+  }, [formSubmitted, handleSubmit]);
 
   return (
     <>
@@ -72,7 +84,7 @@ const Contact = () => {
                 <h3>Questions or need assistance?</h3>
                 <h3>Let us know about it!</h3>
               </div>
-              {/* Step 3b: Bind input values to state variables */}
+              <p>Email us below to any question related to our event</p>
               <input
                 type="text"
                 placeholder="First Name"
@@ -98,13 +110,17 @@ const Contact = () => {
                 Submit
               </button>
             </form>
+            <div className='mobileformsocials'>
+              <p>Share on</p>
+              <img src={socials} alt="" />
+            </div>
           </div>
         </div>
+        <div className="contactgradient contactgradient1"></div>
+        <div className="contactgradient contactgradient2"></div>
       </section>
     </>
   );
 };
 
 export default Contact;
-
-// , firstName, email, message

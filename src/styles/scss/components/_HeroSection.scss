@@ -156,7 +156,6 @@
         width: 400px;
         height: 400px;
         top: 150px;
-
     }
 }
 
@@ -240,6 +239,10 @@
 
                 .herosectioncontent{
 
+                    .star{
+                        display: none;
+                    }
+
                     .heresectionheadingtext_chain_spark{
                         h1{
                             font-size: 50px;
@@ -254,6 +257,12 @@
 
                     p{
                         width: 100%;
+                    }
+                }
+
+                .timer{
+                    .lightstar{
+                        display: none;
                     }
                 }
             }
@@ -305,6 +314,9 @@
                 align-items: center;
                 gap: 15px;
                 .herosectioncontent{
+                    .star{
+                        display: none;
+                    }
                     align-items: center;
                     .heresectionheadingtext_chain_spark{
                         display: none;
