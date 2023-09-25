@@ -201,6 +201,8 @@ const Register = () => {
                         </div>
                     </form>
                 </div>
+                <div className="registergradient registergradient1"></div>
+                <div className="registergradient registergradient2"></div>
             </section>
         </>
     )

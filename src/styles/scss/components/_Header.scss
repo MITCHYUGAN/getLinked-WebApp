@@ -1,5 +1,5 @@
 .header{
-    width: 100%;
+    width: inherit;
     position: fixed;
     display: grid;
     place-items: center;
@@ -64,7 +64,6 @@
 .headerBackgroundActive{
     background-color: $background-main;
 }
-
 
 
 

@@ -6,6 +6,8 @@
     padding-bottom: 57px;
     background: #150E28;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 
     .mobileregister{
         display: none;
@@ -18,6 +20,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        z-index: 2;
 
         .registerimg{
             width: min(515px, 45%);
@@ -165,7 +168,28 @@
             }
         }
     }
+
+    .registergradient{
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        background-image: radial-gradient(circle, $gradient-color -56%,#150E28 69%,rgba(21,14,40,.6616771708683473) 87%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+    }
+    .registergradient1{
+        top: 0;
+        left: 0;
+    }
+    .registergradient2{
+        right: -100px;
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        bottom: -200px;
+    }
 }
+
+
 
 @media (max-width: 1275px) {
     .register{
@@ -219,6 +243,7 @@
             font-family: $font-clashdisplay;
             font-size: $font-16 - 1;
             width: 70%;
+            z-index: 2;
         }
     
         .registerwrapper{
@@ -284,6 +309,39 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .register{
+
+        .registerwrapper{
+            form{
+                .registerformheader{
+                    div{
+                        p{
+                            font-size: 12px;
+                        }
+                        img{
+                            width: 90px;
+                        }
+                    }
+                    h1{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        
+        .registergradient1{
+            height: 300px;
+            top: 80px;
+            left: -60px;
+        }
+
+        .registergradient2{
+            display: none;
         }
     }
 }

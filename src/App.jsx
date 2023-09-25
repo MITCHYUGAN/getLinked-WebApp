@@ -29,7 +29,7 @@ function App() {
             <Rules />
             <Criteria />
             <Faq />
-            <TimeLine />
+            <TimeLine /> 
             {/* <TimeLine /> */}
             <Rewards />
             <Partners />

@@ -3,6 +3,7 @@
     display: grid;
     place-items: center;
     padding: 100px 0;
+    position: relative;
 
     .privacywrapper{
         width: min(1256px, 85%);
@@ -134,6 +135,17 @@
             }
         }
     }
+
+    .privacypolicygradient{
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        background-image: radial-gradient(circle, $gradient-color -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: -50px;
+    }
 }
 
 
@@ -150,17 +162,18 @@
     
                 .privacycontent{
                     width: 90%;
-                    // min-height: ;
-    
-                    .privacycontentwrapper{
-
-                    }
                 }
             }
     
             .privacyimg{
                 width: 70%;
             }
+        }
+        
+        .privacypolicygradient{
+            top: 700px;
+            width: min(500px, 100%);
+            height: min(500px, 100%);
         }
     }
 }
@@ -193,6 +206,11 @@
             .privacyimg{
                 width: 90%;
             }
+        }
+        .privacypolicygradient{
+            top: 400px;
+            width: min(400px, 100%);
+            height: min(400px, 100%);
         }
     }
 }

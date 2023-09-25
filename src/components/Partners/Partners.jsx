@@ -12,6 +12,8 @@ const Partners = () => {
                     <img className="partnersimg"  src={img} alt="" />
                 </div>
             </div>
+            <div className="partnersgradient partnersgradient1"></div>
+            <div className="partnersgradient partnersgradient2"></div>
         </section>
     )
 }

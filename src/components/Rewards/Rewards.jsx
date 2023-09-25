@@ -18,6 +18,8 @@ const Rewards = () => {
                     </div>
                 </div>
             </div>
+            <div className="rewardsgradient rewardsgradient1"></div>
+            <div className="rewardsgradient rewardsgradient2"></div>
         </section>
     )
 }

@@ -4,7 +4,7 @@
     place-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     padding: 100px 0;
-    overflow-x: hidden;
+    position: relative;
 
     .partnerswrapper{
         display: flex;
@@ -12,6 +12,7 @@
         width: 85%;
         align-items: center;
         gap: 65px;
+        z-index: 2;
 
         .partnersheader{
             display: flex;
@@ -51,4 +52,83 @@
         }
     }
 
+    .partnersgradient{
+        width: min(600px, 100%);
+        height: min(600px, 100%);
+        background-image: radial-gradient(circle, $gradient-color -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .partnersgradient1{
+        top: -50px;
+        left: -100px;
+    }
+
+    .partnersgradient2{
+        bottom: -100px;
+        right: -100px;
+    }
+}
+
+
+@media (max-width: 1160px) {
+    .partners{
+        .partnerswrapper{
+            .partnerscontents{
+                height: 450px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .partners{
+        .partnerswrapper{
+            .partnerscontents{
+                height: 350px;
+            }
+        }
+
+        .partnersgradient{
+            width: min(400px, 100%);
+            height: min(400px, 100%);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .partners{
+        .partnerswrapper{
+            width: 75%;
+            .partnerscontents{
+                height: auto;
+                padding: 50px 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .partners{
+        padding: 50px 0;
+        .partnerswrapper{
+            .partnersheader{
+                h1{
+                    font-size: $font-16 + 4;
+                }
+
+                p{
+                    font-size: $font-16 - 4;
+                    width: 300px;
+                }
+            }
+        }
+
+        .partnersgradient{
+            width: min(300px, 100%);
+            height: min(300px, 100%);
+        }
+    }
 }

@@ -119,7 +119,7 @@
     .contactgradient{
         width: min(600px, 100%);
         height: min(600px, 100%);
-        background-image: radial-gradient(circle,#450981 -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
+        background-image: radial-gradient(circle, $gradient-color -56%,#140D27 69%,rgba(21,14,40,.6616771708683473) 87%);
         border-radius: 50%;
         position: absolute;
         z-index: -1;

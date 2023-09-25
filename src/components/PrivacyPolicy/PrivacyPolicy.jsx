@@ -43,6 +43,7 @@ const PrivacyPolicy = () => {
                     <img src={img} alt="" />
                 </div>
             </div>
+            <div className="privacypolicygradient"></div>
         </section>
     )
 }

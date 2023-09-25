@@ -38,6 +38,8 @@ const Criteria = () => {
                     <button className="button">Read More</button>
                 </div>
             </div>
+            <div className="criteriagradient criteriagradient1"></div>
+            <div className="criteriagradient criteriagradient2"></div>
         </section>
     )
 }

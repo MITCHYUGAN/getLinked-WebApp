@@ -8,8 +8,16 @@
     text-decoration: none;
 }
 
+#root{
+    // background-color: pink;
+    overflow-x: hidden;
+    width: min(1512px, 100%);
+}
+
 body{
-    // height: 1500vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: $background-main;
 }
 

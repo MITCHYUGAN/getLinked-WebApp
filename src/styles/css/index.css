@@ -6,7 +6,15 @@
   text-decoration: none;
 }
 
+#root {
+  overflow-x: hidden;
+  width: min(1512px, 100%);
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #140D27;
 }
 
@@ -22,7 +30,7 @@ body {
 }
 
 .header {
-  width: 100%;
+  width: inherit;
   position: fixed;
   display: grid;
   place-items: center;
@@ -232,7 +240,7 @@ body {
 .herosection .circlegradient {
   width: min(600px, 100%);
   height: min(600px, 100%);
-  background-image: radial-gradient(circle, #450981 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
   border-radius: 50%;
   position: absolute;
   z-index: -1;
@@ -524,14 +532,6 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   position: relative;
 }
-.rules .circle-gradient {
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background-color: red;
-  position: absolute;
-  z-index: -1;
-}
 .rules .ruleswrapper {
   width: min(1256px, 85%);
   display: flex;
@@ -544,6 +544,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
+}
+.rules .ruleswrapper .rulescontents .rulesstar {
+  width: 26px;
+  top: -50px;
+  position: absolute;
+  left: 250px;
 }
 .rules .ruleswrapper .rulescontents h1 {
   width: 180px;
@@ -562,12 +569,33 @@ body {
   font-weight: 400;
   line-height: 27.5px;
 }
+.rules .ruleswrapper .rulescontents .mobilerulesstar {
+  display: none;
+}
 .rules .ruleswrapper .rulesimg {
   width: min(600px, 60%);
 }
 .rules .ruleswrapper .rulesimg img {
   width: 100%;
   display: block;
+}
+.rules .rulesgradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.rules .rulesgradient1 {
+  top: -100px;
+  left: 0;
+}
+.rules .rulesgradient2 {
+  width: min(800px, 100%);
+  height: min(800px, 100%);
+  right: -500px;
+  bottom: -200px;
 }
 
 @media (max-width: 800px) {
@@ -584,12 +612,27 @@ body {
     width: min(600px, 70%);
   }
 }
+@media (max-width: 700px) {
+  .rules .ruleswrapper .rulescontents .rulesstar {
+    top: 30px;
+  }
+  .rules .rulesgradient2 {
+    right: -200px;
+    width: 500px;
+    height: 500px;
+  }
+}
 @media (max-width: 450px) {
   .rules .ruleswrapper .rulescontents {
+    align-items: center;
     width: 95%;
   }
+  .rules .ruleswrapper .rulescontents .rulesstar {
+    top: 50px;
+    left: 260px;
+    width: 12px;
+  }
   .rules .ruleswrapper .rulescontents h1 {
-    width: 100%;
     font-size: 20px;
     text-align: center;
   }
@@ -597,8 +640,26 @@ body {
     text-align: center;
     font-size: 12px;
   }
+  .rules .ruleswrapper .rulescontents .mobilerulesstar {
+    position: absolute;
+    display: block;
+    bottom: -30px;
+    left: 50px;
+  }
   .rules .ruleswrapper .rulesimg {
     width: 90%;
+  }
+  .rules .rulesgradient1 {
+    top: -20px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+  }
+  .rules .rulesgradient2 {
+    bottom: 128px;
+    right: -167px;
+    width: 400px;
+    height: 400px;
   }
 }
 .criteria {
@@ -607,6 +668,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   display: grid;
   place-items: center;
+  position: relative;
 }
 .criteria .criteriawrapper {
   width: min(1256px, 90%);
@@ -644,29 +706,55 @@ body {
   font-size: 14px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  line-height: 173.5%;
 }
 .criteria .criteriawrapper .criteriacontents p span {
   font-size: 16px;
   color: #FF26B9;
   font-weight: 700;
 }
+.criteria .criteriagradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.criteria .criteriagradient1 {
+  bottom: -100px;
+  left: 0;
+}
+.criteria .criteriagradient2 {
+  right: -100px;
+  bottom: -300px;
+}
 
 @media (max-width: 850px) {
   .criteria .criteriawrapper {
     flex-direction: column;
   }
-}
-@media (max-width: 645px) {
-  .criteria .criteriawrapper .criteriaimg {
-    width: 90%;
+  .criteria .criteriagradient1 {
+    top: 200px;
+    left: -100px;
   }
-  .criteria .criteriawrapper .criteriacontents {
-    width: 95%;
+  .criteria .criteriagradient2 {
+    bottom: -150px;
+  }
+}
+@media (max-width: 1080px) {
+  .criteria .criteriagradient2 {
+    width: 400px;
+    height: 400px;
+    right: -30px;
   }
 }
 @media (max-width: 645px) {
   .criteria {
     padding: 50px 0;
+  }
+  .criteria .criteriawrapper .criteriaimg {
+    width: 90%;
   }
   .criteria .criteriawrapper .criteriacontents {
     width: 95%;
@@ -683,6 +771,16 @@ body {
   }
   .criteria .criteriawrapper .criteriacontents p span {
     font-size: 13px;
+  }
+  .criteria .criteriagradient2 {
+    bottom: -30px;
+    right: -150px;
+  }
+  .criteria .criteriagradient1 {
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    left: -100px;
   }
 }
 .faq {
@@ -709,10 +807,14 @@ body {
   flex-direction: column;
   gap: 16px;
 }
+.faq .faqwrapper .faqheader .faqheadertext .purplestar {
+  width: 30px;
+  margin-left: -30px;
+}
 .faq .faqwrapper .faqheader .faqheadertext h1 {
   color: white;
   font-size: 32px;
-  width: min(253px, 100%);
+  width: 253px;
   font-family: "Clash Display", sans-serif;
   font-weight: 700;
 }
@@ -770,6 +872,13 @@ body {
   }
   .faq .faqwrapper .faqheader .faqheadertext {
     align-items: center;
+    position: relative;
+  }
+  .faq .faqwrapper .faqheader .faqheadertext .purplestar {
+    position: absolute;
+    left: 20px;
+    width: 18px;
+    top: -10px;
   }
   .faq .faqwrapper .faqheader .faqheadertext h1 {
     text-align: center;
@@ -946,12 +1055,15 @@ body {
   display: grid;
   place-items: center;
   padding: 50px 0;
+  position: relative;
+  z-index: 2;
 }
 .rewards .rewardswrapper {
   width: min(1256px, 85%);
   display: flex;
   flex-direction: column;
   gap: 100px;
+  z-index: 2;
 }
 .rewards .rewardswrapper .rewardsheader {
   align-self: flex-end;
@@ -975,6 +1087,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  line-height: 170.9%;
 }
 .rewards .rewardswrapper .rewardsimages {
   width: 100%;
@@ -994,8 +1107,34 @@ body {
 .rewards .rewardswrapper .rewardsimages .rewardscontentsimg img {
   width: 100%;
 }
+.rewards .rewardsgradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #110B21 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.rewards .rewardsgradient1 {
+  top: 150px;
+  left: 100px;
+}
+.rewards .rewardsgradient2 {
+  right: -200px;
+  bottom: 0;
+}
 
-@media (max-width: 600px) {
+@media (max-width: 1090px) {
+  .rewards .rewardsgradient {
+    width: min(400px, 100%);
+    height: min(400px, 100%);
+  }
+  .rewards .rewardsgradient1 {
+    top: 100px;
+    left: 60px;
+  }
+}
+@media (max-width: 630px) {
   .rewards .rewardswrapper .rewardsimages {
     flex-direction: column;
     align-items: center;
@@ -1032,6 +1171,10 @@ body {
   .rewards .rewardswrapper .rewardsimages .rewardscontentsimg {
     width: 100%;
   }
+  .rewards .rewardsgradient1 {
+    top: 28px;
+    left: -60px;
+  }
 }
 .partners {
   width: 100%;
@@ -1039,7 +1182,7 @@ body {
   place-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   padding: 100px 0;
-  overflow-x: hidden;
+  position: relative;
 }
 .partners .partnerswrapper {
   display: flex;
@@ -1047,6 +1190,7 @@ body {
   width: 85%;
   align-items: center;
   gap: 65px;
+  z-index: 2;
 }
 .partners .partnerswrapper .partnersheader {
   display: flex;
@@ -1080,12 +1224,68 @@ body {
 .partners .partnerswrapper .partnerscontents .partnersimg {
   width: min(900px, 80%);
 }
+.partners .partnersgradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.partners .partnersgradient1 {
+  top: -50px;
+  left: -100px;
+}
+.partners .partnersgradient2 {
+  bottom: -100px;
+  right: -100px;
+}
 
+@media (max-width: 1160px) {
+  .partners .partnerswrapper .partnerscontents {
+    height: 450px;
+  }
+}
+@media (max-width: 900px) {
+  .partners .partnerswrapper .partnerscontents {
+    height: 350px;
+  }
+  .partners .partnersgradient {
+    width: min(400px, 100%);
+    height: min(400px, 100%);
+  }
+}
+@media (max-width: 700px) {
+  .partners .partnerswrapper {
+    width: 75%;
+  }
+  .partners .partnerswrapper .partnerscontents {
+    height: auto;
+    padding: 50px 20px;
+  }
+}
+@media (max-width: 500px) {
+  .partners {
+    padding: 50px 0;
+  }
+  .partners .partnerswrapper .partnersheader h1 {
+    font-size: 20px;
+  }
+  .partners .partnerswrapper .partnersheader p {
+    font-size: 12px;
+    width: 300px;
+  }
+  .partners .partnersgradient {
+    width: min(300px, 100%);
+    height: min(300px, 100%);
+  }
+}
 .privacy {
   width: 100%;
   display: grid;
   place-items: center;
   padding: 100px 0;
+  position: relative;
 }
 .privacy .privacywrapper {
   width: min(1256px, 85%);
@@ -1199,6 +1399,16 @@ body {
   width: 100%;
   display: block;
 }
+.privacy .privacypolicygradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: -50px;
+}
 
 @media (max-width: 850px) {
   .privacy .privacywrapper {
@@ -1214,6 +1424,11 @@ body {
   }
   .privacy .privacywrapper .privacyimg {
     width: 70%;
+  }
+  .privacy .privacypolicygradient {
+    top: 700px;
+    width: min(500px, 100%);
+    height: min(500px, 100%);
   }
 }
 @media (max-width: 550px) {
@@ -1233,6 +1448,11 @@ body {
   }
   .privacy .privacywrapper .privacyimg {
     width: 90%;
+  }
+  .privacy .privacypolicygradient {
+    top: 400px;
+    width: min(400px, 100%);
+    height: min(400px, 100%);
   }
 }
 .footer {
@@ -1514,7 +1734,7 @@ body {
 .contacts .contactgradient {
   width: min(600px, 100%);
   height: min(600px, 100%);
-  background-image: radial-gradient(circle, #450981 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  background-image: radial-gradient(circle, #450982 -56%, #140D27 69%, rgba(21, 14, 40, 0.6616771709) 87%);
   border-radius: 50%;
   position: absolute;
   z-index: -1;
@@ -1600,6 +1820,8 @@ body {
   padding-bottom: 57px;
   background: #150E28;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 .register .mobileregister {
   display: none;
@@ -1611,6 +1833,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  z-index: 2;
 }
 .register .registerwrapper .registerimg {
   width: min(515px, 45%);
@@ -1732,6 +1955,24 @@ body {
   width: 100%;
   margin-top: 6px;
 }
+.register .registergradient {
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  background-image: radial-gradient(circle, #450982 -56%, #150E28 69%, rgba(21, 14, 40, 0.6616771709) 87%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+.register .registergradient1 {
+  top: 0;
+  left: 0;
+}
+.register .registergradient2 {
+  right: -100px;
+  width: min(600px, 100%);
+  height: min(600px, 100%);
+  bottom: -200px;
+}
 
 @media (max-width: 1275px) {
   .register .registerwrapper form .registerformcontents .teamandphone div p, .register .registerwrapper form .registerformcontents .emailandtopic div p, .register .registerwrapper form .registerformcontents .selects div p {
@@ -1758,6 +1999,7 @@ body {
     font-family: "Clash Display", sans-serif;
     font-size: 15px;
     width: 70%;
+    z-index: 2;
   }
   .register .registerwrapper {
     flex-direction: column;
@@ -1804,6 +2046,25 @@ body {
     width: 172px;
     height: 53px;
     align-self: center;
+  }
+}
+@media (max-width: 450px) {
+  .register .registerwrapper form .registerformheader div p {
+    font-size: 12px;
+  }
+  .register .registerwrapper form .registerformheader div img {
+    width: 90px;
+  }
+  .register .registerwrapper form .registerformheader h1 {
+    font-size: 20px;
+  }
+  .register .registergradient1 {
+    height: 300px;
+    top: 80px;
+    left: -60px;
+  }
+  .register .registergradient2 {
+    display: none;
   }
 }
 

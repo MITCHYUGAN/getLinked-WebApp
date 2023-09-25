@@ -1,5 +1,6 @@
 import faqimg from "./assets/img.png"
 import FAQ from "./FAQ.json"
+import purplestar from './assets/purplestar.png'
 
 const Faq = () => {
     return(
@@ -7,7 +8,8 @@ const Faq = () => {
             <div className="faqwrapper">
                 <div className="faqheader">
                     <div className="faqheadertext">
-                        <h1>Frequently Ask <span>Question</span></h1>
+                        <img src={purplestar} alt="" className="purplestar" />
+                        <h1>Frequently Ask <br /><span>Question</span></h1>
                         <p>We got answers to the questions that you might want to ask about getlinked Hackathon 1.0</p>
                     </div>
                     <div className="faqquestions">
