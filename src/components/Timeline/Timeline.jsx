@@ -4,6 +4,9 @@ import img3 from "./assets/img3.png"
 import img4 from "./assets/img4.png"
 import img5 from "./assets/img5.png"
 import img6 from "./assets/img6.png"
+import purplestar from './assets/purplestar.png'
+import lightstar from './assets/lightstar.png'
+import star from './assets/star.png'
 
 // Mobile Images
 import imgm1 from "./assets/imgm1.png"
@@ -23,7 +26,8 @@ const TimeLine = () => {
                 </div>
                 <div className="timelinecontents">
                     <div className="timelinecontent timelinecontent1">
-                        <div>
+                        <div className="firstdiv">
+                            <img src={purplestar} className="purplestar" alt="" />
                             <h2>Hackathon Announcement</h2>
                             <p>The getlinked tech hackathon 1.0 is formally announced to the general public and teams begin to get ready to register</p>
                         </div>
@@ -48,7 +52,8 @@ const TimeLine = () => {
                             <p>Interested Participants are no longer Allowed to register</p>
                         </div>
                         <img src={img3} alt="" />
-                        <div>
+                        <div className="thirddiv">
+                            <img src={lightstar} className="lightstar" alt="" />
                             <h2 className="date">November 18, 2023</h2>
                         </div>
                     </div>
@@ -74,7 +79,7 @@ const TimeLine = () => {
                     </div>
                     <div className="timelinecontent timelinecontent6">
                         <div>
-                            <h2>November 18, 2023</h2>
+                            <h2 className="date">November 18, 2023</h2>
                         </div>
                         <img src={img6} alt="" />
                         <div>
@@ -82,6 +87,7 @@ const TimeLine = () => {
                             <p>Teams get the opportunity to pitch their projects to judges. The winner of the hackathon will also be announced on this day</p>
                         </div>
                     </div>
+                    <img src={star} className="star" alt="" />
                 </div>
 
                 {/* Mobile */}
@@ -91,6 +97,7 @@ const TimeLine = () => {
                             <img src={imgm1} alt="" />
                         </div>
                         <div className="timelinecontentmobiletext">
+                            <img src={purplestar} className="purplestar" alt="" />
                             <h2>Hackathon Announcement</h2>
                             <p>The getlinked tech hackathon 1.0 is formally announced to the general public and teams begin to get ready to register</p>
                             <h2 className="date">November 18, 2023</h2>
@@ -121,6 +128,7 @@ const TimeLine = () => {
                             <img src={imgm4} alt="" />
                         </div>
                         <div className="timelinecontentmobiletext">
+                            <img src={lightstar} className="lightstar" alt="" />
                             <h2>Announcement of the accepted teams and ideas</h2>
                             <p>The getlinked tech hackathon 1.0 is formally announced to the general public and teams begin to get ready to register</p>
                             <h2 className="date">November 18, 2023</h2>
@@ -146,6 +154,7 @@ const TimeLine = () => {
                             <h2>November 18, 2023</h2>
                         </div>
                     </div>
+                    <img src={star} className="star" alt="" />
                 </div>
             </div>
         </section>

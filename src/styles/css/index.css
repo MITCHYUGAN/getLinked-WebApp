@@ -936,18 +936,21 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  position: relative;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: flex-start;
+  height: 170px;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent div {
   width: min(520px, 45%);
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-self: flex-end;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent div h2 {
   font-size: 24px;
@@ -966,16 +969,25 @@ body {
   text-align: right;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent1 {
-  align-items: flex-end;
+  height: 220px;
 }
-.timeline .timelinewrapper .timelinecontents .timelinecontent1 div {
-  margin-bottom: 20px;
+.timeline .timelinewrapper .timelinecontents .timelinecontent1 .firstdiv {
+  position: relative;
 }
-.timeline .timelinewrapper .timelinecontents .timelinecontent2 {
-  align-items: flex-end;
+.timeline .timelinewrapper .timelinecontents .timelinecontent1 .firstdiv .purplestar {
+  position: absolute;
+  width: 30px;
+  left: 200px;
+  top: -100px;
 }
-.timeline .timelinewrapper .timelinecontents .timelinecontent3 {
-  align-items: flex-end;
+.timeline .timelinewrapper .timelinecontents .timelinecontent3 .thirddiv {
+  position: relative;
+}
+.timeline .timelinewrapper .timelinecontents .timelinecontent3 .thirddiv .lightstar {
+  position: absolute;
+  width: 26px;
+  right: 150px;
+  top: -50px;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent3 div:nth-of-type(1) {
   align-items: flex-end;
@@ -985,13 +997,16 @@ body {
   align-items: flex-end;
 }
 .timeline .timelinewrapper .timelinecontents .timelinecontent3 div .date {
-  margin-bottom: 13px;
+  margin-bottom: 30px;
 }
-.timeline .timelinewrapper .timelinecontents .timelinecontent4, .timeline .timelinewrapper .timelinecontents .timelinecontent5, .timeline .timelinewrapper .timelinecontents .timelinecontent6 {
-  align-items: flex-end;
+.timeline .timelinewrapper .timelinecontents .timelinecontent1 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent2 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent3 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent4 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent5 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent6 div .date {
+  margin-bottom: 30px;
 }
-.timeline .timelinewrapper .timelinecontents .timelinecontent4 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent5 div .date, .timeline .timelinewrapper .timelinecontents .timelinecontent6 div .date {
-  margin-bottom: 13px;
+.timeline .timelinewrapper .timelinecontents .star {
+  width: 26px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
 }
 .timeline .timelinewrapper .timelinecontentsmobile {
   display: none;
@@ -1017,6 +1032,7 @@ body {
     flex-direction: column;
     gap: 36px;
     width: 90%;
+    position: relative;
   }
   .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile {
     display: flex;
@@ -1034,6 +1050,13 @@ body {
     flex-direction: column;
     gap: 30px;
     margin-bottom: 13px;
+    width: min(350px, 100%);
+    position: relative;
+  }
+  .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile .timelinecontentmobiletext .purplestar {
+    position: absolute;
+    top: -40px;
+    width: 14px;
   }
   .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile .timelinecontentmobiletext h2 {
     font-size: 20px;
@@ -1047,6 +1070,26 @@ body {
     font-family: "Montserrat", sans-serif;
     line-height: 170.9%;
     font-weight: 400;
+  }
+  .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile4 .timelinecontentmobiletext {
+    position: relative;
+  }
+  .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile4 .timelinecontentmobiletext .lightstar {
+    position: absolute;
+    top: -30px;
+    right: 50px;
+    width: 14px;
+  }
+  .timeline .timelinewrapper .timelinecontentsmobile .star {
+    width: 14px;
+    position: absolute;
+    bottom: -50px;
+    left: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .timeline .timelinewrapper .timelinecontentsmobile .timelinecontentmobile .timelinecontentmobiletext h2 {
+    font-size: 16px;
   }
 }
 .rewards {

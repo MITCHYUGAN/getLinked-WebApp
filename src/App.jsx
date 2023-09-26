@@ -14,7 +14,7 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 import Foooter from './components/Footer/Footer'
 import Contact from './Pages/Contact/Contact'
 import Register from './Pages/Register/Register'
-import TimeLine from './components/Time/Time'
+import TimeLine from './components/Timeline/Timeline'
 
 function App() {
 
