@@ -69,6 +69,10 @@ body {
   font-weight: 400;
   color: white;
   cursor: pointer;
+  transition: 0.5s;
+}
+.header .headerWrapper nav ul .navlinks:hover {
+  color: #903AFF;
 }
 .header .headerWrapper nav ul .active {
   background: linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
@@ -1716,13 +1720,27 @@ body {
   background: rgba(255, 255, 255, 0.01);
   display: grid;
   place-items: center;
-  padding: 20px 20px;
+  padding: 30px 20px;
+  position: relative;
+}
+.modal .modalwrapper .purplestar {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 20px;
 }
 .modal .modalwrapper div {
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  position: relative;
+}
+.modal .modalwrapper div .star {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  width: 20px;
 }
 .modal .modalwrapper div .modalimg {
   width: min(427px, 70%);
@@ -1745,8 +1763,19 @@ body {
 .modal .modalwrapper div button {
   width: 100%;
 }
+.modal .modalwrapper .lightpurplestar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+}
 
 @media (max-width: 465px) {
+  .modal .modalwrapper .purplestar {
+    top: -30px;
+    right: 0px;
+    width: 14px;
+  }
   .modal .modalwrapper div {
     gap: 26px;
   }
@@ -1756,6 +1785,11 @@ body {
   .modal .modalwrapper div p {
     font-size: 12px;
     width: 100%;
+  }
+  .modal .modalwrapper .lightpurplestar {
+    bottom: -50px;
+    right: 50px;
+    width: 14px;
   }
 }
 .contacts {

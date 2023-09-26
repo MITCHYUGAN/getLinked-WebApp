@@ -40,6 +40,11 @@
                     font-weight: $font-w-400;
                     color: $white;
                     cursor: pointer;
+                    transition: 0.5s;
+                }
+
+                .navlinks:hover{
+                    color: #903AFF;
                 }
 
                 .active{

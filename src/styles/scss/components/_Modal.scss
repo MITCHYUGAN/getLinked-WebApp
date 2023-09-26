@@ -9,20 +9,34 @@
 
     .modalwrapper{
         width: min(599px, 80%);
-        // min-height: 564px;
         border-radius: 5px;
         border: 1px solid #D434FE;
         background: rgba(255, 255, 255, 0.01);
         display: grid;
         place-items: center;
-        padding: 20px 20px;
+        padding: 30px 20px;
+        position: relative;
+
+        .purplestar{
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 20px;
+        }
 
         div{
             display: flex;
             flex-direction: column;
             gap: 15px;
             align-items: center;
-            // background-color: red;
+            position: relative;
+
+            .star{
+                position: absolute;
+                left: 20px;
+                top: 150px;
+                width: 20px;
+            }
 
             .modalimg{
                 width: min(427px, 70%);
@@ -49,12 +63,24 @@
                 width: 100%;
             }
         }
+
+        .lightpurplestar{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 20px;
+        }
     }
 }
 
 @media (max-width: 465px) {
     .modal{
         .modalwrapper{
+            .purplestar{
+                top: -30px;
+                right: 0px;
+                width: 14px;
+            }
             div{
                 gap: 26px;
                 h1{
@@ -65,6 +91,12 @@
                     font-size: $font-16 - 4;
                     width: 100%;
                 }
+            }
+
+            .lightpurplestar{
+                bottom: -50px;
+                right: 50px;
+                width: 14px;
             }
         }
     }
