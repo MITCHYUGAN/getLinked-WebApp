@@ -7,6 +7,13 @@
     position: relative;
     z-index: 2;
 
+    .purplestar{
+        position: absolute;
+        left: 250px;
+        top: 100px;
+        width: 20px;
+    }
+
     .rewardswrapper{
         width: min(1256px, 85%);
         display: flex;
@@ -102,6 +109,17 @@
     }
 }
 
+
+@media (max-width: 930px) {
+    .rewards{
+        .purplestar{
+            left: 50px;
+            top: 30px;
+        }
+    }
+}
+
+
 @media (max-width: 630px) {
     .rewards{
     
@@ -125,6 +143,10 @@
 
 @media (max-width: 500px) {
     .rewards{
+        .purplestar{
+            width: 10px;
+            left: 20px;
+        }
     
         .rewardswrapper{
             gap: 65px;
@@ -157,11 +179,6 @@
                 }
             }
         }
-
-        // .rewardsgradient{
-        //     width: min(300px, 100%);
-        //     height: min(300px, 100%);
-        // }
 
         .rewardsgradient1{
             top: 28px;

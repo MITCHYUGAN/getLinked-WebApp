@@ -1,5 +1,7 @@
 import tick from './assets/tick.png'
 import img from './assets/img.png'
+import star from "./assets/star.png"
+import purplestar from "./assets/purplestar.png"
 
 const PrivacyPolicy = () => {
     return(
@@ -7,11 +9,14 @@ const PrivacyPolicy = () => {
             <div className='privacywrapper'>
                 <div className="privacycontents">
                     <div className='privacyheader'>
-                        <h1>Privacy Policy and <span>Terms</span></h1>
+                        <h1>Privacy Policy and <span>Terms</span> 
+                            <img src={star} className='star' alt="" />
+                        </h1>
                         <p>Last updated on September 12, 2023</p>
                         <p className='privacyheaderparagraph'>Below are our privacy & policy, which outline a lot of goodies. it’s our aim to always take of our participant</p>
                     </div>
                     <div className='privacycontent'>
+                        <img src={purplestar} className='purplestar' alt="" />
                         <div className='privacycontentwrapper'>
                             <p className='privacycontentparagraph'>
                                 At getlinked tech Hackathon 1.0, we value your privacy
@@ -40,6 +45,7 @@ const PrivacyPolicy = () => {
                     </div>
                 </div>
                 <div className='privacyimg'>
+                    <img src={purplestar} className='purpleimgstar' alt="" />
                     <img src={img} alt="" />
                 </div>
             </div>

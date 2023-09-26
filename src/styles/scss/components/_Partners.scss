@@ -45,9 +45,29 @@
             place-items: center;
             border: 1px solid $color-main;
             border-radius: 5px;
+            position: relative;
+            
+            .purplestar{
+                top: -50px;
+                left: 70px;
+                position: absolute;
+                width: 30px;
+            }
 
             .partnersimg{
                 width: min(900px, 80%);
+            }
+
+            .smallpurplestar{
+                position: absolute;
+                top: 50px;
+                width: 15px;
+            }
+
+            .lightstar{
+                position: absolute;
+                bottom: 50px;
+                width: 20px;
             }
         }
     }
@@ -105,6 +125,18 @@
             .partnerscontents{
                 height: auto;
                 padding: 50px 20px;
+
+                .purplestar{
+                    width: 20px;
+                }
+
+                .smallpurplestar{
+                    top: 20px;
+                }
+
+                .lightstar{
+                    bottom: 20px;
+                }
             }
         }
     }
@@ -122,6 +154,25 @@
                 p{
                     font-size: $font-16 - 4;
                     width: 300px;
+                }
+            }
+
+            .partnerscontents{
+                .purplestar{
+                    top: 10px;
+                    left: 50px;
+                    width: 14px;
+                }
+
+                .smallpurplestar{
+                    top: 75px;
+                    width: 10px;
+                }
+
+                .lightstar{
+                    right: 40px;
+                    width: 14px;
+                    bottom: 0;
                 }
             }
         }

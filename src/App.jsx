@@ -7,7 +7,6 @@ import IntroSection from './components/IntroSection/IntroSection'
 import Rules from './components/Rules/Rules'
 import Criteria from './components/Criteria/Criteria'
 import Faq from './components/FAQ/FAQ'
-// import TimeLine from './components/Timeline/TimeLine'
 import Rewards from './components/Rewards/Rewards'
 import Partners from './components/Partners/Partners'
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
@@ -30,7 +29,6 @@ function App() {
             <Criteria />
             <Faq />
             <TimeLine /> 
-            {/* <TimeLine /> */}
             <Rewards />
             <Partners />
             <PrivacyPolicy />

@@ -29,6 +29,14 @@
                     font-size: $font-30 + 2;
                     font-family: $font-clashdisplay;
                     font-weight: $font-w-700;
+                    position: relative;
+
+                    .star{
+                        position: absolute;
+                        right: -50px;
+                        width: 26px;
+                        top: -20px;
+                    }
 
                     span{
                         color: $color-main;
@@ -58,6 +66,12 @@
                 display: grid;
                 place-items: center;
                 padding: 20px 0;
+                position: relative;
+
+                .purplestar{
+                    position: absolute;
+                    left: -40px;
+                }
 
                 .privacycontentwrapper{
                     display: flex;
@@ -128,6 +142,14 @@
 
         .privacyimg{
             width: min(615px, 60%);
+            position: relative;
+
+            .purpleimgstar{
+                position: absolute;
+                width: 23px;
+                top: 100px;
+                left: -50px;
+            }
 
             img{
                 width: 100%;
@@ -167,6 +189,10 @@
     
             .privacyimg{
                 width: 70%;
+
+                .purpleimgstar{
+                    left: -100px;
+                }
             }
         }
         
@@ -205,12 +231,28 @@
     
             .privacyimg{
                 width: 90%;
+
+                .purpleimgstar{
+                    width: 17px;
+                }
             }
         }
         .privacypolicygradient{
             top: 400px;
             width: min(400px, 100%);
             height: min(400px, 100%);
+        }
+    }
+}
+
+@media (max-width: 1190px) {
+    .privacy{
+        .privacywrapper{
+            .privacyimg{
+                .purpleimgstar{
+                    left: -10px;
+                }
+            }
         }
     }
 }

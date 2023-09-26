@@ -1,9 +1,11 @@
 import trophyimg from "./assets/trophy.png"
 import levelimg from "./assets/levelsimg.png"
+import purplestar from './assets/purplestar.png'
 
 const Rewards = () => {
     return(
         <section className="rewards">
+            <img src={purplestar} className="purplestar" alt="" />
             <div className="rewardswrapper">
                 <div className="rewardsheader"> 
                     <h1>Prizes and <span>Rewards</span></h1>
