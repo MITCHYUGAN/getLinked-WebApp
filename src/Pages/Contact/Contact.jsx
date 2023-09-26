@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Header from '../../components/Header/Header';
 import socials from './assets/socials.png';
+import purplestar from './assets/purplestar.png'
+import lightstar from "./assets/lightstar.png"
+import star from "./assets/star.png"
 
 const Contact = () => {
   // Set up state variables to track form input values and form submission status
@@ -62,6 +65,7 @@ const Contact = () => {
       <section className="contacts">
         <div className="contactswrapper">
           <div className="contactinfo">
+            <img src={purplestar} className='purplestar' alt="" />
             <h1>Get in touch</h1>
             <p>Contact Information</p>
             <p>
@@ -73,8 +77,10 @@ const Contact = () => {
             <img src={socials} alt="" />
           </div>
           <div className="contactform">
+            <img src={star} className='star' alt="" />
             <form onSubmit={handleSubmit} className="form">
               <div className="formheader">
+                <img src={purplestar} className='purplestarmobile' alt="" />
                 <h3>Questions or need assistance?</h3>
                 <h3>Let us know about it!</h3>
               </div>
@@ -104,6 +110,8 @@ const Contact = () => {
                 Submit
               </button>
             </form>
+            <img src={purplestar} className='purplestar' alt="" />
+            <img src={lightstar} className='lightstar' alt="" />
             <div className="mobileformsocials">
               <p>Share on</p>
               <img src={socials} alt="" />
