@@ -1982,6 +1982,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 23px;
+  position: relative;
+}
+.register .registerwrapper form .star {
+  position: absolute;
+  top: 10px;
+  right: 150px;
 }
 .register .registerwrapper form .formh1 {
   font-size: 32px;
@@ -2055,6 +2061,9 @@ body {
 .register .registerwrapper form .registerformcontents .teamandphone div input::placeholder, .register .registerwrapper form .registerformcontents .emailandtopic div input::placeholder, .register .registerwrapper form .registerformcontents .selects div input::placeholder {
   color: rgba(255, 255, 255, 0.25);
 }
+.register .registerwrapper form .registerformcontents .teamandphone .purplestar, .register .registerwrapper form .registerformcontents .emailandtopic .purplestar, .register .registerwrapper form .registerformcontents .selects .purplestar {
+  display: none;
+}
 .register .registerwrapper form .registerformcontents .teamandphone select option, .register .registerwrapper form .registerformcontents .emailandtopic select option, .register .registerwrapper form .registerformcontents .selects select option {
   color: black;
 }
@@ -2083,6 +2092,11 @@ body {
 .register .registerwrapper form .footerlastdiv button {
   width: 100%;
   margin-top: 6px;
+}
+.register .registerwrapper form .lightstar {
+  position: absolute;
+  bottom: -15px;
+  right: 100px;
 }
 .register .registergradient {
   width: min(600px, 100%);
@@ -2145,10 +2159,15 @@ body {
     display: none;
   }
   .register .registerwrapper form {
-    width: 100%;
+    width: 90%;
     background-color: transparent;
     box-shadow: none;
     padding: 0;
+  }
+  .register .registerwrapper form .star {
+    left: -20px;
+    top: 150px;
+    width: 14px;
   }
   .register .registerwrapper form .formh1 {
     display: none;
@@ -2167,6 +2186,12 @@ body {
   }
   .register .registerwrapper form .registerformcontents .selects {
     gap: 10px;
+    position: relative;
+  }
+  .register .registerwrapper form .registerformcontents .selects .purplestar {
+    position: absolute;
+    display: block;
+    right: -20px;
   }
   .register .registerwrapper form .footerlastdiv h6 {
     font-size: 10px;
@@ -2175,6 +2200,9 @@ body {
     width: 172px;
     height: 53px;
     align-self: center;
+  }
+  .register .registerwrapper form .lightstar {
+    display: none;
   }
 }
 @media (max-width: 450px) {

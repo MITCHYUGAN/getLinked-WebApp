@@ -4,6 +4,9 @@ import registerimg from "./assets/img.png"
 import humans from "./assets/humans.png"
 import mobileimg from "./assets/imgmobile.png"
 import { useEffect, useState } from "react"
+import star from './assets/star.png'
+import lightstar from './assets/lightstar.png'
+import purplestar from './assets/purplestar.png'
 
 const Register = () => {
 
@@ -31,7 +34,7 @@ const Register = () => {
             alert("Pls Input a Valid Email")
         }else{
 
-            //Construct the request body
+            // Construct the request body
             const requestBody = {
                 "email": email,
                 "phone_number": phone,
@@ -111,6 +114,7 @@ const Register = () => {
                         <img className="mobileimg" src={mobileimg} alt="" />
                     </div>
                     <form onSubmit={handleSubmit} className="registerform">
+                        <img src={star} className="star" alt="" />
                         <h1 className="formh1">Register</h1>
                         <div className="registerformheader">
                             <div>
@@ -141,6 +145,7 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="selects">
+                                <img src={purplestar} className="purplestar" alt="" />
                                 <div>
                                     <p>Category</p>
                                     <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -186,6 +191,7 @@ const Register = () => {
                             </div>
                             <button type="submit" onClick={handleSubmit} className="button">{buttonText}</button>
                         </div>
+                        <img src={lightstar} className="lightstar" alt="" />
                     </form>
                 </div>
                 <div className="registergradient registergradient1"></div>

@@ -43,6 +43,13 @@
             display: flex;
             flex-direction: column;
             gap: 23px;
+            position: relative;
+
+            .star{
+                position: absolute;
+                top: 10px;
+                right: 150px;
+            }
 
             .formh1{
                 font-size: $font-30 + 2;
@@ -126,6 +133,10 @@
                         }
                     }
 
+                    .purplestar{
+                        display: none;
+                    }
+
                     select{
 
                         option{
@@ -165,6 +176,12 @@
                     width: 100%;
                     margin-top: 6px;
                 }
+            }
+
+            .lightstar{
+                position: absolute;
+                bottom: -15px;
+                right: 100px;
             }
         }
     }
@@ -265,10 +282,16 @@
             }
     
             form{
-                width: 100%;
+                width: 90%;
                 background-color: transparent;
                 box-shadow: none;
                 padding: 0;
+
+                .star{
+                    left: -20px;
+                    top: 150px;
+                    width: 14px;
+                }
 
                 .formh1{
                     display: none;
@@ -294,6 +317,13 @@
 
                     .selects{
                         gap: 10px;
+                        position: relative;
+
+                        .purplestar{
+                            position: absolute;
+                            display: block;
+                            right: -20px;
+                        }
                     }
                 }
 
@@ -307,6 +337,10 @@
                         height: 53px;
                         align-self: center;
                     }
+                }
+
+                .lightstar{
+                    display: none;
                 }
             }
         }
